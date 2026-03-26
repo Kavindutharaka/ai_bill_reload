@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reloadApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Avurudu Reload Wasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="confetti-canvas" style="display:none;"></canvas>
+
+<div class="app-container" ng-controller="MainCtrl">
+
+    <!-- Step Indicator (hidden on language selection) -->
+    <div class="step-indicator" ng-hide="step === 0">
+        <span class="step-dot" ng-class="{'active': step === 1, 'done': step > 1}"></span>
+        <span class="step-dot" ng-class="{'active': step === 2, 'done': step > 2}"></span>
+        <span class="step-dot" ng-class="{'active': step === 3 || step === 4}"></span>
+    </div>
+
+    <!-- STEP 0: Language Selection -->
+    <div ng-show="step === 0">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Avurudu Reload Wasi">
+        </div>
+
+        <div class="card lang-card">
+            <h2 style="margin-bottom:24px;">Select Your Language</h2>
+            <div class="lang-buttons">
+                <button class="btn lang-btn" ng-click="selectLanguage('en')">
+                    <span class="lang-label">English</span>
+                </button>
+                <button class="btn lang-btn" ng-click="selectLanguage('si')">
+                    <span class="lang-label">සිංහල</span>
+                </button>
+                <button class="btn lang-btn" ng-click="selectLanguage('ta')">
+                    <span class="lang-label">தமிழ்</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="promo-banner">
+            <p class="promo-text-en">Purchase Rs 1,000+ worth of Dettol, Harpic, Lysol, Mortein, Veet or Moov &amp; win a reload!</p>
+            <p class="promo-text-si">රු 1,000+ Reckitt නිෂ්පාදන මිලදී ගෙන reload එකක් දිනන්න!</p>
+            <p class="promo-text-ta">ரூ 1,000+ Reckitt பொருட்கள் வாங்கி reload வெல்லுங்கள்!</p>
+        </div>
+    </div>
+
+    <!-- STEP 1: Registration -->
+    <div ng-show="step === 1">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Avurudu Reload Wasi">
+        </div>
+
+        <div class="card">
+            <h2>{{t.enterDetails}}</h2>
+
+            <div class="form-group">
+                <label>{{t.yourName}}</label>
+                <input type="text" ng-model="user.name" placeholder="{{t.yourName}}" autocomplete="name">
+                <span class="error-text" ng-show="errors.name">{{errors.name}}</span>
+            </div>
+
+            <div class="form-group">
+                <label>{{t.mobileNumber}}</label>
+                <input type="tel" ng-model="user.phone" placeholder="07XXXXXXXX" maxlength="10" autocomplete="tel">
+                <span class="error-text" ng-show="errors.phone">{{errors.phone}}</span>
+            </div>
+
+            <button class="btn btn-primary" ng-click="goToUpload()">
+                {{t.next}} &rarr;
+            </button>
+        </div>
+
+        <div class="promo-banner">
+            <p class="promo-text-en">{{t.promoText}}</p>
+        </div>
+
+        <div class="date-valid-wrap">
+            <p>{{t.dateValid}}</p>
+        </div>
+    </div>
+
+    <!-- STEP 2: Bill Capture -->
+    <div ng-show="step === 2">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Avurudu Reload Wasi" style="max-width:120px;">
+        </div>
+
+        <div class="card">
+            <h2>{{t.captureTitle}}</h2>
+
+            <p style="font-size:13px; color:#666; text-align:center; margin-bottom:16px;">
+                {{user.name}} ({{user.phone}})
+                <a href="javascript:void(0)" ng-click="goBack()" style="color:#e74c3c; font-size:12px; margin-left:8px;">{{t.change}}</a>
+            </p>
+
+            <!-- Single Photo Capture Button -->
+            <div ng-show="captureMode === 'single' && !billPreview">
+                <button class="btn btn-primary capture-btn" style="position:relative; overflow:hidden; margin-bottom:10px;">
+                    {{t.takePhoto}}
+                    <input type="file" accept="image/*" capture="environment"
+                           onchange="angular.element(this).scope().onSingleCapture(this)"
+                           style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+                </button>
+                <div style="text-align:center;">
+                    <a href="javascript:void(0)" ng-click="captureMode = 'long'" style="color:#e67e22; font-size:13px; font-weight:600;">
+                        {{t.longBillLink}}
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Photo Preview -->
+            <div class="preview-wrap" ng-show="billPreview && captureMode === 'single'">
+                <img ng-src="{{billPreview}}" alt="Bill preview">
+                <br>
+                <span class="remove-btn" ng-click="removeImage()" ng-hide="isSubmitting">{{t.removeRetake}}</span>
+            </div>
+
+            <!-- Long Bill Mode: Multi Capture (2-3 photos) -->
+            <div ng-show="captureMode === 'long'">
+                <div style="text-align:center; margin-bottom:12px;">
+                    <small style="color:#e67e22; font-weight:600;">{{t.longBillMode}}</small>
+                    <br>
+                    <a href="javascript:void(0)" ng-click="switchToSingle()" style="color:#999; font-size:11px;" ng-hide="captures[0]">{{t.switchSingle}}</a>
+                </div>
+
+                <div class="photo-slots">
+                    <!-- Photo 1 -->
+                    <div class="photo-slot" ng-class="{'captured': captures[0]}">
+                        <div class="photo-slot-preview" ng-show="captures[0]">
+                            <img ng-src="{{captures[0].preview}}" alt="Photo 1">
+                            <span class="photo-slot-label">Top</span>
+                            <span class="photo-slot-remove" ng-click="removeCapture(0)" ng-hide="isSubmitting">✕</span>
+                        </div>
+                        <div class="photo-slot-empty" ng-hide="captures[0]">
+                            <span class="photo-slot-icon">📸</span>
+                            <span class="photo-slot-text">Photo 1</span>
+                            <input type="file" accept="image/*" capture="environment"
+                                   onchange="angular.element(this).scope().onCapture(this, 0)"
+                                   style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="photo-slot" ng-class="{'captured': captures[1], 'disabled': !captures[0]}">
+                        <div class="photo-slot-preview" ng-show="captures[1]">
+                            <img ng-src="{{captures[1].preview}}" alt="Photo 2">
+                            <span class="photo-slot-label">Middle</span>
+                            <span class="photo-slot-remove" ng-click="removeCapture(1)" ng-hide="isSubmitting">✕</span>
+                        </div>
+                        <div class="photo-slot-empty" ng-hide="captures[1]">
+                            <span class="photo-slot-icon">📸</span>
+                            <span class="photo-slot-text">Photo 2</span>
+                            <span class="photo-slot-timer" ng-show="captureTimeLeft > 0">{{captureTimeLeft}}s left</span>
+                            <input type="file" accept="image/*" capture="environment" ng-disabled="!captures[0]"
+                                   onchange="angular.element(this).scope().onCapture(this, 1)"
+                                   style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="photo-slot" ng-class="{'captured': captures[2], 'disabled': !captures[1]}">
+                        <div class="photo-slot-preview" ng-show="captures[2]">
+                            <img ng-src="{{captures[2].preview}}" alt="Photo 3">
+                            <span class="photo-slot-label">Bottom</span>
+                            <span class="photo-slot-remove" ng-click="removeCapture(2)" ng-hide="isSubmitting">✕</span>
+                        </div>
+                        <div class="photo-slot-empty" ng-hide="captures[2]">
+                            <span class="photo-slot-icon">📸</span>
+                            <span class="photo-slot-text">Photo 3</span>
+                            <span class="photo-slot-timer" ng-show="captureTimeLeft2 > 0">{{captureTimeLeft2}}s left</span>
+                            <input type="file" accept="image/*" capture="environment" ng-disabled="!captures[1]"
+                                   onchange="angular.element(this).scope().onCapture(this, 2)"
+                                   style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time expired message -->
+                <div class="capture-expired" ng-show="captureExpired">
+                    <p>{{t.sessionExpired}}</p>
+                    <button class="btn btn-sm" ng-click="resetCaptures()" style="margin-top:8px; background:#e74c3c; color:#fff;">
+                        {{t.startOver}}
+                    </button>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-primary" ng-click="submitBill()"
+                    ng-disabled="(captureMode === 'single' && !billImage) || (captureMode === 'long' && !captures[1]) || isSubmitting || captureExpired"
+                    ng-show="billPreview || (captureMode === 'long' && captures[0])"
+                    style="margin-top:16px;">
+                <span ng-hide="isSubmitting">{{t.submitBill}}</span>
+                <span ng-show="isSubmitting"><span class="btn-spinner"></span> {{t.processing}}</span>
+            </button>
+        </div>
+
+        <div style="text-align:center; margin-top:12px;">
+            <p style="font-size:11px; color:#666;">
+                {{t.eligibleBrands}}<br>
+                {{t.billClearNote}}
+            </p>
+        </div>
+    </div>
+
+    <!-- STEP 3: Processing -->
+    <div ng-show="step === 3">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Avurudu Reload Wasi" style="max-width:120px;">
+        </div>
+
+        <div class="card">
+            <div class="loading-wrap">
+                <div class="spinner"></div>
+                <p>{{t.analyzing}}</p>
+                <p class="attempt-text" ng-show="currentAttempt > 1">
+                    {{t.attempt}} {{currentAttempt}} {{t.of}} 3...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 4: Result -->
+    <div ng-show="step === 4">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Avurudu Reload Wasi" style="max-width:120px;">
+        </div>
+
+        <div class="card">
+            <!-- SUCCESS -->
+            <div class="result-wrap success" ng-show="result.type === 'success'">
+                <span class="result-icon">🎉</span>
+                <h3>{{result.title}}</h3>
+                <div class="eligible-amount">Rs {{result.eligibleTotal | number:2}}</div>
+                <p style="font-size:13px;">{{t.eligibleTotal}}</p>
+                <p style="color:#27ae60; font-weight:600;">{{result.message}}</p>
+
+                <div class="items-summary" ng-show="result.items.length">
+                    <h4>{{t.billItems}} (Bill #{{result.billNumber}})</h4>
+                    <div class="item-row" ng-repeat="item in result.items"
+                         ng-class="{'eligible': item.brand_matched}">
+                        <span>
+                            {{item.item_name}}
+                            <span class="brand-tag" ng-show="item.brand_matched">{{item.brand_matched}}</span>
+                        </span>
+                        <span>Rs {{item.total_price | number:2}}</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" ng-click="startOver()" style="margin-top:16px;">
+                    {{t.finish}}
+                </button>
+            </div>
+
+            <!-- NOT ELIGIBLE -->
+            <div class="result-wrap fail" ng-show="result.type === 'fail'">
+                <span class="result-icon">😔</span>
+                <h3>{{result.title}}</h3>
+                <p>{{result.message}}</p>
+
+                <div class="items-summary" ng-show="result.items.length">
+                    <h4>{{t.billItems}} (Bill #{{result.billNumber}})</h4>
+                    <div class="item-row" ng-repeat="item in result.items"
+                         ng-class="{'eligible': item.brand_matched}">
+                        <span>
+                            {{item.item_name}}
+                            <span class="brand-tag" ng-show="item.brand_matched">{{item.brand_matched}}</span>
+                        </span>
+                        <span>Rs {{item.total_price | number:2}}</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" ng-click="startOver()" style="margin-top:16px;">
+                    {{t.tryAnother}}
+                </button>
+            </div>
+
+            <!-- DUPLICATE -->
+            <div class="result-wrap error" ng-show="result.type === 'duplicate'">
+                <span class="result-icon">🔄</span>
+                <h3>{{result.title}}</h3>
+                <p>{{result.message}}</p>
+                <button class="btn btn-primary" ng-click="startOver()" style="margin-top:16px;">
+                    {{t.submitDifferent}}
+                </button>
+            </div>
+
+            <!-- ERROR -->
+            <div class="result-wrap error" ng-show="result.type === 'error'">
+                <span class="result-icon">{{result.icon}}</span>
+                <h3>{{result.title}}</h3>
+                <p>{{result.message}}</p>
+                <button class="btn btn-primary" ng-click="tryAgain()" style="margin-top:12px;">
+                    {{t.tryAgain}}
+                </button>
+                <button class="btn btn-danger btn-sm" ng-click="startOver()" style="margin-top:8px; width:100%;">
+                    {{t.startOver}}
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

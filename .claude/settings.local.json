@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/prasa/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/62ea37ec-a3fd-435c-a07c-c9320d2706cc/91541bbc-cea2-4a47-a6bb-54bb44853153/skills/xlsx/**)",
+      "Bash(python -c \":*)",
+      "Bash(pip install:*)",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"IF NOT EXISTS \\(SELECT * FROM sysobjects WHERE name=''''rek_cc_reg'''' AND xtype=''''U''''\\) CREATE TABLE rek_cc_reg \\(id INT IDENTITY\\(1,1\\) PRIMARY KEY, name NVARCHAR\\(200\\), phone VARCHAR\\(15\\), bill_image NVARCHAR\\(MAX\\), bill_number VARCHAR\\(100\\), bill_date VARCHAR\\(50\\), shop_name NVARCHAR\\(500\\), bill_total DECIMAL\\(10,2\\), eligible_total DECIMAL\\(10,2\\), is_eligible BIT DEFAULT 0, reload_sent BIT DEFAULT 0, created_at DATETIME DEFAULT GETDATE\\(\\), items_json NVARCHAR\\(MAX\\)\\)\"\"}')",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"IF NOT EXISTS \\(SELECT * FROM sysobjects WHERE name=''''rek_cc_items'''' AND xtype=''''U''''\\) CREATE TABLE rek_cc_items \\(id INT IDENTITY\\(1,1\\) PRIMARY KEY, reg_id INT, item_name NVARCHAR\\(500\\), brand_matched VARCHAR\\(50\\), quantity DECIMAL\\(10,2\\), unit_price DECIMAL\\(10,2\\), total_price DECIMAL\\(10,2\\), is_eligible_brand BIT DEFAULT 0\\)\"\"}')",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"SELECT TOP 0 * FROM rek_cc_reg\"\"}')",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"SELECT TOP 0 * FROM rek_cc_items\"\"}')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"SELECT id, name, phone, bill_number, bill_total, eligible_total, is_eligible, reload_sent, created_at FROM rek_cc_reg\"\"}')",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"SELECT * FROM rek_cc_items\"\"}')",
+      "Bash(curl -s --location 'https://mas.phvtech.com/api/Master/sp' --header 'Content-Type: application/json' --data '{\"\"SysID\"\": \"\"SELECT COUNT\\(*\\) as cnt FROM rek_cc_reg\"\"}')",
+      "Bash(dotnet --version)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet build:*)",
+      "Bash(curl -s http://localhost:5050/)",
+      "Bash(curl -s -X POST http://localhost:5050/api/send-mail -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(curl -s -X POST https://mail.phvtech.com/api/send-mail -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(curl -s -X POST 'https://mas.phvtech.com/api/Master/sp' -H 'Content-Type: application/json' -d '{\"\"SysID\"\": \"\"DELETE FROM rek_cc_items; DELETE FROM rek_cc_reg;\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"DELETE FROM rek_cc_items; DELETE FROM rek_cc_reg;\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"SELECT COUNT\\(*\\) as cnt FROM rek_cc_reg\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"SELECT id, name, created_at, GETDATE\\(\\) as server_now FROM rek_cc_reg\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"SELECT GETDATE\\(\\) as server_local, GETUTCDATE\\(\\) as server_utc, DATEDIFF\\(MINUTE, GETUTCDATE\\(\\), GETDATE\\(\\)\\) as offset_minutes\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"UPDATE rek_cc_reg SET created_at = DATEADD\\(HOUR, 7, created_at\\)\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"SELECT id, name, created_at FROM rek_cc_reg ORDER BY created_at DESC\"\"}')",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -X POST https://mas.phvtech.com/api/Master/sp -H 'Content-Type: application/json' -d '{\"\"\"\"SysID\"\"\"\": \"\"\"\"SELECT id, name, phone, bill_number, shop_name, bill_total, eligible_total, is_eligible, items_json, CASE WHEN bill_image LIKE data:image% THEN YES ELSE NO END as has_image, LEN\\(bill_image\\) as img_len FROM rek_cc_reg WHERE phone = 0768812247 ORDER BY created_at DESC\"\"\"\"}')",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d '{\"\"SysID\"\": \"\"SELECT id, LEFT\\(bill_image, 30\\) as img_start, LEN\\(bill_image\\) as img_len FROM rek_cc_reg WHERE id IN \\(23, 24\\)\"\"}')"
+    ]
+  }
+}

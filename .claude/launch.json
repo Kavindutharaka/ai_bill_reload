@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "app",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "D:/Dev/perfect_addz/ai_bill_reload"],
+      "port": 8080
+    }
+  ]
+}

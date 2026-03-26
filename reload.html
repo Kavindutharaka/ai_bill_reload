@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reloadApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reload Management - Avurudu Reload Wasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-container" ng-controller="ReloadCtrl">
+
+    <!-- Header -->
+    <div class="admin-header">
+        <h1>
+            <img src="logo.png" alt="Logo">
+            Reload Management
+        </h1>
+        <div>
+            <a href="admin.html" class="btn btn-sm btn-primary" style="text-decoration:none;">Admin Panel</a>
+            <a href="index.html" class="btn btn-sm" style="text-decoration:none; background:#fff;">User App</a>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Search (Name / Phone / Bill#)</label>
+            <input type="text" ng-model="filters.search" placeholder="Search..." ng-change="applyFilters()">
+        </div>
+        <div class="filter-group">
+            <label>Date From</label>
+            <input type="date" ng-model="filters.dateFrom">
+        </div>
+        <div class="filter-group">
+            <label>Date To</label>
+            <input type="date" ng-model="filters.dateTo">
+        </div>
+        <div class="filter-actions">
+            <button class="btn btn-sm btn-primary" ng-click="loadData()">Refresh</button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="admin-loading" ng-show="loading">
+        <div class="spinner"></div>
+        <p>Loading eligible records...</p>
+    </div>
+
+    <!-- Data Table -->
+    <div class="data-table-wrap" ng-hide="loading">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Date/Time (LKR)</th>
+                    <th>Bill Number</th>
+                    <th>Eligible Total</th>
+                    <th>Reload Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="r in displayRecords" ng-class="{'row-eligible': r.reload_sent}">
+                    <td>{{$index + 1}}</td>
+                    <td>{{r.name}}</td>
+                    <td>{{r.phone}}</td>
+                    <td>{{r.created_at | lkrTime}}</td>
+                    <td>{{r.bill_number}}</td>
+                    <td><strong>Rs {{r.eligible_total | number:2}}</strong></td>
+                    <td>
+                        <span class="badge" ng-class="{'badge-success': r.reload_sent, 'badge-warning': !r.reload_sent}">
+                            {{r.reload_sent ? 'SENT' : 'PENDING'}}
+                        </span>
+                    </td>
+                    <td style="white-space:nowrap;">
+                        <button class="action-btn" style="background:#3498db;color:#fff;" ng-click="showItemsModal(r)">
+                            Details
+                        </button>
+                        <button class="action-btn" style="margin-left:4px;"
+                                ng-class="{'mark-unsent': r.reload_sent, 'mark-sent': !r.reload_sent}"
+                                ng-click="toggleReloadSent(r)">
+                            {{r.reload_sent ? 'Unsent' : 'Mark Sent'}}
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-if="displayRecords.length === 0">
+                    <td colspan="8" class="no-data">No eligible records found</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Details Modal -->
+    <div class="modal-overlay" ng-show="detailRecord" ng-click="closeModal()">
+        <div class="modal-content" ng-click="$event.stopPropagation()" style="max-width:600px;">
+            <button class="modal-close" ng-click="closeModal()">&times;</button>
+            <h3 style="margin-bottom:12px;">{{detailRecord.name}} - {{detailRecord.phone}}</h3>
+            <p style="font-size:13px;color:#666;margin-bottom:12px;">Bill #{{detailRecord.bill_number}} | Eligible Total: <strong style="color:#27ae60;">Rs {{detailRecord.eligible_total | number:2}}</strong></p>
+
+            <h4 style="font-size:14px;margin-bottom:8px;color:#27ae60;">Eligible Items ({{detailRecord._eligibleItems.length}})</h4>
+            <div style="background:#e8f8ef;border-radius:8px;padding:10px;margin-bottom:12px;">
+                <div ng-repeat="item in detailRecord._eligibleItems" style="display:flex;justify-content:space-between;padding:4px 0;font-size:13px;font-weight:600;">
+                    <span>{{item.item_name}} ({{item.brand_matched}})</span>
+                    <span>Rs {{item.total_price | number:2}}</span>
+                </div>
+            </div>
+
+            <h4 style="font-size:14px;margin-bottom:8px;">All Items ({{detailRecord._items.length}})</h4>
+            <div style="max-height:200px;overflow-y:auto;background:#f8f9fa;border-radius:8px;padding:10px;">
+                <div ng-repeat="item in detailRecord._items" style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:13px;">
+                    <span>
+                        {{item.item_name}}
+                        <span ng-if="item.brand_matched" style="background:#27ae60;color:#fff;font-size:9px;padding:1px 6px;border-radius:4px;margin-left:4px;">{{item.brand_matched}}</span>
+                    </span>
+                    <span style="white-space:nowrap;margin-left:8px;">Rs {{item.total_price | number:2}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div style="text-align:center; padding:16px; color:#888; font-size:13px;" ng-hide="loading">
+        Total Eligible: {{records.length}} |
+        Sent: {{(records | filter:{reload_sent:true}).length}} |
+        Pending: {{(records | filter:{reload_sent:false}).length}}
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

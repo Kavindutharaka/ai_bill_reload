@@ -1,0 +1,10 @@
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\mail_server.exe
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\appsettings.Development.json
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\appsettings.json
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\mail_server.dll
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\mail_server.deps.json
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\mail_server.runtimeconfig.json
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\mail_server.pdb
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\BouncyCastle.Cryptography.dll
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\MailKit.dll
+D:\Dev\perfect_addz\ai_bill_reload\mail_server\pub\MimeKit.dll
