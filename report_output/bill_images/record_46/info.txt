@@ -1,0 +1,10 @@
+Name: Chathurani
+Phone: 0717332695
+Bill #: 00000086
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27 12:29:21
+Bill Total: Rs 12558.5
+Eligible Total: Rs 950.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

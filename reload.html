@@ -109,13 +109,28 @@
             </div>
 
             <h4 style="font-size:14px;margin-bottom:8px;">All Items ({{detailRecord._items.length}})</h4>
-            <div style="max-height:200px;overflow-y:auto;background:#f8f9fa;border-radius:8px;padding:10px;">
+            <div style="max-height:200px;overflow-y:auto;background:#f8f9fa;border-radius:8px;padding:10px;margin-bottom:12px;">
                 <div ng-repeat="item in detailRecord._items" style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:13px;">
                     <span>
                         {{item.item_name}}
                         <span ng-if="item.brand_matched" style="background:#27ae60;color:#fff;font-size:9px;padding:1px 6px;border-radius:4px;margin-left:4px;">{{item.brand_matched}}</span>
                     </span>
                     <span style="white-space:nowrap;margin-left:8px;">Rs {{item.total_price | number:2}}</span>
+                </div>
+            </div>
+
+            <!-- Bill Images (lazy loaded) -->
+            <div ng-show="detailLoading" style="text-align:center;padding:20px;">
+                <div class="spinner" style="width:30px;height:30px;"></div>
+                <p style="font-size:12px;color:#999;">Loading images...</p>
+            </div>
+            <div ng-hide="detailLoading" ng-show="detailRecord._billImages.length > 0">
+                <h4 style="font-size:14px;margin-bottom:8px;">Bill Images
+                    <span style="font-size:11px;color:#888;font-weight:normal;" ng-show="detailRecord.capture_mode === 'long'">(Long Bill - {{detailRecord._billImages.length}} photos)</span>
+                    <span style="font-size:11px;color:#888;font-weight:normal;" ng-show="detailRecord.capture_mode !== 'long'">(Single Photo)</span>
+                </h4>
+                <div ng-repeat="img in detailRecord._billImages" style="margin-bottom:8px;">
+                    <img ng-src="{{img}}" alt="Bill Photo {{$index + 1}}" style="width:100%;border-radius:8px;border:1px solid #ddd;">
                 </div>
             </div>
         </div>

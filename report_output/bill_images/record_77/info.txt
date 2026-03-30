@@ -1,0 +1,10 @@
+Name: Niluka
+Phone: 0705518399
+Bill #: IN-5-131358
+Shop: HHP SUPER
+Date (LKR): 2026-03-27T10:36:50.75
+Bill Total: Rs 0.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

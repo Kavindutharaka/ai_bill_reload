@@ -1,0 +1,10 @@
+Name: Predip kumara
+Phone: 0777460184
+Bill #: 4159282
+Shop: MAHAJANA SUPER
+Date (LKR): 2026-03-27 16:55:54
+Bill Total: Rs 1350.01
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

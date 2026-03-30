@@ -1,0 +1,10 @@
+Name: Kumar
+Phone: 0719943034
+Bill #: 7111242
+Shop: SULAIMAN TRADERS
+Date (LKR): 2026-03-27 16:23:54
+Bill Total: Rs 0.0
+Eligible Total: Rs 51045.52
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

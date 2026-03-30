@@ -1,0 +1,10 @@
+Name: Rajcalistus
+Phone: 0773459000
+Bill #: SALE/POS2026/03/400361
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28T06:26:54.8
+Bill Total: Rs 2028.5
+Eligible Total: Rs 1170.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Brinda
+Phone: 0769276922
+Bill #: 001
+Shop: Richmaart
+Date (LKR): 2026-03-28 13:42:06
+Bill Total: Rs 0.0
+Eligible Total: Rs 1080.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

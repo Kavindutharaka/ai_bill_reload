@@ -1,0 +1,10 @@
+Name: Thakshika
+Phone: 0768812247
+Bill #: 1251818
+Shop: MARIYA'S GROCERY
+Date (LKR): 2026-03-26T06:55:55.07
+Bill Total: Rs 26360.8
+Eligible Total: Rs 890.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: None

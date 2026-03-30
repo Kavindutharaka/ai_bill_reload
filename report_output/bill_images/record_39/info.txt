@@ -1,0 +1,10 @@
+Name: K.tharsini
+Phone: 0778752491
+Bill #: 2385741
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27 11:14:44
+Bill Total: Rs 1215.01
+Eligible Total: Rs 960.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

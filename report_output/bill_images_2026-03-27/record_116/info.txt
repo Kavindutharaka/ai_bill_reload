@@ -1,0 +1,10 @@
+Name: chathuri
+Phone: 0701163579
+Bill #: 1000000107
+Shop: Sethsiri Family Super
+Date (LKR): 2026-03-27 21:50:55
+Bill Total: Rs 6967.34
+Eligible Total: Rs 991.59
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

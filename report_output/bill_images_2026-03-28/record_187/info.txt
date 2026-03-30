@@ -1,0 +1,10 @@
+Name: Imamdeen
+Phone: 0772300494
+Bill #: 1138300
+Shop: SuperValu
+Date (LKR): 2026-03-28 15:54:21
+Bill Total: Rs 5995.0
+Eligible Total: Rs 1310.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: K.T.Ariyawathi
+Phone: 0779260947
+Bill #: 4827652
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-28T13:31:32.81
+Bill Total: Rs 4410.0
+Eligible Total: Rs 1050.0
+Status: ELIGIBLE
+Reload: PENDING
+Capture Mode: single

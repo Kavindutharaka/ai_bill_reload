@@ -1,0 +1,10 @@
+Name: Priyadharshani
+Phone: 0704813533
+Bill #: 00000013
+Shop: වටරැක සිටි සුපර්
+Date (LKR): 2026-03-27T08:52:10.02
+Bill Total: Rs 2741.2
+Eligible Total: Rs 325.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

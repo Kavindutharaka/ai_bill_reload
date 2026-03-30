@@ -1,0 +1,10 @@
+Name: Senera
+Phone: 0767140032
+Bill #: 122110
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-28T05:57:26.01
+Bill Total: Rs 10947.68
+Eligible Total: Rs 1530.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

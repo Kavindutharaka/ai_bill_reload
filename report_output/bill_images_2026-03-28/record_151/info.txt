@@ -1,0 +1,10 @@
+Name: Ansar
+Phone: 0757796125
+Bill #: SALE/POS2026/03/400385
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28T07:30:57.14
+Bill Total: Rs 2374.0
+Eligible Total: Rs 1729.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

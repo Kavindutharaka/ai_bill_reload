@@ -1,0 +1,10 @@
+Name: Chamara Hasanga
+Phone: 0760687154
+Bill #: 70945
+Shop: සුජිත් ස්ටෝර්ස්
+Date (LKR): 2026-03-27 20:48:21
+Bill Total: Rs 15998.37
+Eligible Total: Rs 1200.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

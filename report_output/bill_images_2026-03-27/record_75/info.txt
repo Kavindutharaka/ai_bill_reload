@@ -1,0 +1,10 @@
+Name: Sudarshani
+Phone: 0763484068
+Bill #: 121793
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-27 15:57:14
+Bill Total: Rs 0.0
+Eligible Total: Rs 2930.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

@@ -1,0 +1,10 @@
+Name: Ahamed
+Phone: 0774303909
+Bill #: 4167124
+Shop: Mahajana Ai
+Date (LKR): 2026-03-29 18:13:57
+Bill Total: Rs 21440.01
+Eligible Total: Rs 1455.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

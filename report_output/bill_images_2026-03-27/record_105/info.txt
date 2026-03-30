@@ -1,0 +1,10 @@
+Name: K.B.Malani
+Phone: 0742329007
+Bill #: 180341
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-27 18:00:32
+Bill Total: Rs 880.0
+Eligible Total: Rs 880.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

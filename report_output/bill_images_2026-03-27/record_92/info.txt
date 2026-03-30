@@ -1,0 +1,10 @@
+Name: Bhagya
+Phone: 0741015281
+Bill #: IN-6-48601
+Shop: HHP SUPER
+Date (LKR): 2026-03-27 16:50:26
+Bill Total: Rs 1160.0
+Eligible Total: Rs 1160.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Buddhi
+Phone: 0740764336
+Bill #: 1000000112
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-29 15:29:51
+Bill Total: Rs 6555.22
+Eligible Total: Rs 2490.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

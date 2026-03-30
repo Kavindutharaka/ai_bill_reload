@@ -1,0 +1,10 @@
+Name: Jayasinghe
+Phone: 0724868406
+Bill #: 00000002
+Shop: නිව් පැතුම ෆුඩ්සිටි
+Date (LKR): 2026-03-28T05:27:55.49
+Bill Total: Rs 13505.94
+Eligible Total: Rs 1725.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

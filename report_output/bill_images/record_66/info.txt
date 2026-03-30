@@ -1,0 +1,10 @@
+Name: Thusiyana
+Phone: 0765787986
+Bill #: 2385967
+Shop: SIVASAKTH'
+Date (LKR): 2026-03-27T09:37:10.81
+Bill Total: Rs 8120.01
+Eligible Total: Rs 1180.02
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

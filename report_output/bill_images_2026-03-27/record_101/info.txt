@@ -1,0 +1,10 @@
+Name: K sriranjan
+Phone: 0775353019
+Bill #: 364797
+Shop: Akshaya Food Centr
+Date (LKR): 2026-03-27 17:48:26
+Bill Total: Rs 1135.0
+Eligible Total: Rs 1135.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

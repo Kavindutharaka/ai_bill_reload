@@ -1,0 +1,10 @@
+Name: Nidershan
+Phone: 0766838690
+Bill #: 4079852
+Shop: 
+Date (LKR): 2026-03-29 15:35:17
+Bill Total: Rs 0.0
+Eligible Total: Rs 1150.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

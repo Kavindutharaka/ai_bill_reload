@@ -1,0 +1,10 @@
+Name: Placidus Perera
+Phone: 0773363678
+Bill #: 07732394
+Shop: UPEKA SUPER
+Date (LKR): 2026-03-28 13:17:07
+Bill Total: Rs 6163.32
+Eligible Total: Rs 1545.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

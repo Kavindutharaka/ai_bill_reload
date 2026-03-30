@@ -1,0 +1,10 @@
+Name: Sachi perera
+Phone: 0713711897
+Bill #: 1000000191
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-27T11:52:30.61
+Bill Total: Rs 5566.6
+Eligible Total: Rs 1938.95
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

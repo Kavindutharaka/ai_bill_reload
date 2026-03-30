@@ -1,0 +1,10 @@
+Name: Shamil
+Phone: 0770418419
+Bill #: 4075517
+Shop: MKB
+Date (LKR): 2026-03-27 23:42:21
+Bill Total: Rs 6960.99
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

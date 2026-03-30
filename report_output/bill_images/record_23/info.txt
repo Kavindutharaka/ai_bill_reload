@@ -1,0 +1,10 @@
+Name: Thakshika
+Phone: 0768812247
+Bill #: 10090000070
+Shop: null
+Date (LKR): 2026-03-26 12:23:03
+Bill Total: Rs 28360.8
+Eligible Total: Rs 410.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: None

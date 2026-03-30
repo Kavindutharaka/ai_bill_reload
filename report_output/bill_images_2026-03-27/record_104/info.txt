@@ -1,0 +1,10 @@
+Name: K.gunawathi
+Phone: 0716401226
+Bill #: 00000011
+Shop: වට්ටක්ක පොළ
+Date (LKR): 2026-03-27T12:29:26.3
+Bill Total: Rs 8043.98
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

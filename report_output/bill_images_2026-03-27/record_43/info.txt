@@ -1,0 +1,10 @@
+Name: R.thanalaxmi
+Phone: 0774690339
+Bill #: 2385801
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27T06:35:19.27
+Bill Total: Rs 22538.0
+Eligible Total: Rs 2210.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

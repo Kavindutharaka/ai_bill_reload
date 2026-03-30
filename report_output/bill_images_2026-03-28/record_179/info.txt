@@ -1,0 +1,10 @@
+Name: Aruni
+Phone: 0760629968
+Bill #: 08792148
+Shop: සමන්ත ෆුඩ් සිටි
+Date (LKR): 2026-03-28 15:19:19
+Bill Total: Rs 0.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

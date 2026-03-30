@@ -1,0 +1,10 @@
+Name: Minduli
+Phone: 0763400137
+Bill #: 00000004
+Shop: ජෙ බී සුපර්
+Date (LKR): 2026-03-26 10:29:51
+Bill Total: Rs 0.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: None

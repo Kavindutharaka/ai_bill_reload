@@ -1,0 +1,10 @@
+Name: Sumith Jayasena
+Phone: 0762163988
+Bill #: 71136
+Shop: සුසීත ස්ටෝර්ස්
+Date (LKR): 2026-03-28 19:38:14
+Bill Total: Rs 3938.76
+Eligible Total: Rs 1020.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

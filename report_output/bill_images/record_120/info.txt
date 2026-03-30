@@ -1,0 +1,10 @@
+Name: Prathip
+Phone: 0754459271
+Bill #: IN033040
+Shop: SRI MITHUMARI STORES
+Date (LKR): 2026-03-28 08:30:02
+Bill Total: Rs 23912.36
+Eligible Total: Rs 15858.81
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

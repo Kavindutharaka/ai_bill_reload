@@ -1,0 +1,10 @@
+Name: Randil Harshana
+Phone: 0784530243
+Bill #: 0313321872
+Shop: කෝප් සුපර් මීගමුව
+Date (LKR): 2026-03-26 19:01:07
+Bill Total: Rs 0.0
+Eligible Total: Rs 3750.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

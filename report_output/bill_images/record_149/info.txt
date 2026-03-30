@@ -1,0 +1,10 @@
+Name: Rajan
+Phone: 0779189116
+Bill #: 365698
+Shop: 
+Date (LKR): 2026-03-28 12:54:52
+Bill Total: Rs 16010.0
+Eligible Total: Rs 1439.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

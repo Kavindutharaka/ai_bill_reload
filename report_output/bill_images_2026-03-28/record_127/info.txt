@@ -1,0 +1,10 @@
+Name: Urani
+Phone: 0777284056
+Bill #: 365494
+Shop: Akshaya Food Centr
+Date (LKR): 2026-03-28 11:05:58
+Bill Total: Rs 0.0
+Eligible Total: Rs 610.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

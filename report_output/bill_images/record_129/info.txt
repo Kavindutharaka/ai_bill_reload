@@ -1,0 +1,10 @@
+Name: Dinuka
+Phone: 0763358253
+Bill #: 00000018
+Shop: නිව් පැතුම ෆුඩ්සිටි
+Date (LKR): 2026-03-28 11:24:20
+Bill Total: Rs 0.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

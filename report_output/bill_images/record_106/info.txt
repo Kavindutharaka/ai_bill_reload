@@ -1,0 +1,10 @@
+Name: K gunawathi
+Phone: 0716401229
+Bill #: 00000015
+Shop: 
+Date (LKR): 2026-03-27 18:03:10
+Bill Total: Rs 8033.98
+Eligible Total: Rs 1034.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

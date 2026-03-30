@@ -1,0 +1,10 @@
+Name: Azra
+Phone: 0775945665
+Bill #: 00000190
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27T10:24:35.23
+Bill Total: Rs 21383.62
+Eligible Total: Rs 1130.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

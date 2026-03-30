@@ -1,0 +1,10 @@
+Name: Kannan
+Phone: 0777361870
+Bill #: 00000149
+Shop: AACHE FOOD CENTER
+Date (LKR): 2026-03-27T08:54:47.01
+Bill Total: Rs 1275.0
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: PENDING
+Capture Mode: single

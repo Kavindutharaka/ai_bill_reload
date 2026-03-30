@@ -1,0 +1,10 @@
+Name: Janaka
+Phone: 0764453947
+Bill #: 122789
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-29T11:26:41.17
+Bill Total: Rs 27851.0
+Eligible Total: Rs 1135.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

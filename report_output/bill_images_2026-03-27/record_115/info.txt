@@ -1,0 +1,10 @@
+Name: Malathi
+Phone: 0770778816
+Bill #: 00000056
+Shop: AACHE FOOD CENTER
+Date (LKR): 2026-03-27T15:42:14.66
+Bill Total: Rs 1100.0
+Eligible Total: Rs 500.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

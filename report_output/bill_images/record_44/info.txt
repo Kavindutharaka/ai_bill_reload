@@ -1,0 +1,10 @@
+Name: S.pakiyanathan
+Phone: 0771294198
+Bill #: 2385806
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27T06:38:54.26
+Bill Total: Rs 1150.0
+Eligible Total: Rs 1150.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

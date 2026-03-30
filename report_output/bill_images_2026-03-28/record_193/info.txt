@@ -1,0 +1,10 @@
+Name: Disanayaka
+Phone: 0718238283
+Bill #: 4064747
+Shop: SuperValu
+Date (LKR): 2026-03-28 16:29:41
+Bill Total: Rs 12000.0
+Eligible Total: Rs 2860.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Josuva Alan
+Phone: 0774872696
+Bill #: SALL/POS2026/03/1003/1
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28T09:20:30.07
+Bill Total: Rs 2010.0
+Eligible Total: Rs 1170.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

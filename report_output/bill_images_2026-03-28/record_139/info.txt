@@ -1,0 +1,10 @@
+Name: MA Rahman
+Phone: 0713772871
+Bill #: 002797
+Shop: 
+Date (LKR): 2026-03-28T06:20:49.16
+Bill Total: Rs 1060.0
+Eligible Total: Rs 1060.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

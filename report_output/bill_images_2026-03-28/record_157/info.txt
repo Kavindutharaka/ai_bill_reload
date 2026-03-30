@@ -1,0 +1,10 @@
+Name: Anfas
+Phone: 0757796125
+Bill #: 21T/005977
+Shop: The Jaffna Grill
+Date (LKR): 2026-03-28T07:45:54.52
+Bill Total: Rs 500.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Nadini
+Phone: 0768506211
+Bill #: 00000003
+Shop: නිව් පැතුම ෆුඩ්සිටි
+Date (LKR): 2026-03-28 15:20:34
+Bill Total: Rs 3964.99
+Eligible Total: Rs 1300.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

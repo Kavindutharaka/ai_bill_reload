@@ -1,0 +1,10 @@
+Name: Jesikka
+Phone: 0778413825
+Bill #: 2386007
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27 15:55:42
+Bill Total: Rs 1275.01
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

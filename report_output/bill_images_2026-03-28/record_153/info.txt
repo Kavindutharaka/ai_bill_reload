@@ -1,0 +1,10 @@
+Name: Naseela
+Phone: 0710641432
+Bill #: 1136362
+Shop: 
+Date (LKR): 2026-03-28 13:05:20
+Bill Total: Rs 24992.54
+Eligible Total: Rs 1570.0
+Status: ELIGIBLE
+Reload: PENDING
+Capture Mode: long

@@ -1,0 +1,10 @@
+Name: Rajesvar
+Phone: 0770200112
+Bill #: 2387205
+Shop: SIVASAKTH'
+Date (LKR): 2026-03-29T04:54:04.36
+Bill Total: Rs 11760.0
+Eligible Total: Rs 1175.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

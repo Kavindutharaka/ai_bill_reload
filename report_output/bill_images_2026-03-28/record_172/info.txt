@@ -1,0 +1,10 @@
+Name: A.murugananthan
+Phone: 0763099825
+Bill #: A158921
+Shop: දිල්ෂාණි සුපර්
+Date (LKR): 2026-03-28T08:59:57.09
+Bill Total: Rs 2172.5
+Eligible Total: Rs 1080.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

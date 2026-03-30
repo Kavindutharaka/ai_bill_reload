@@ -1,0 +1,10 @@
+Name: Piya darshani
+Phone: 0706864870
+Bill #: 00009482
+Shop: යකු පිටිය සුපර්
+Date (LKR): 2026-03-27 14:22:44
+Bill Total: Rs 12014.9
+Eligible Total: Rs 1950.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

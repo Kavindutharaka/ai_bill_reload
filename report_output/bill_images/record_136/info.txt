@@ -1,0 +1,10 @@
+Name: Karthn
+Phone: 0773130852
+Bill #: 365565
+Shop: Akshaya Food Centr
+Date (LKR): 2026-03-28 11:43:17
+Bill Total: Rs 4678.0
+Eligible Total: Rs 1850.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

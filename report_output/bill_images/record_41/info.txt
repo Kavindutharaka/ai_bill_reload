@@ -1,0 +1,10 @@
+Name: M.thevaraj
+Phone: 0772669196
+Bill #: 2385735
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27T05:53:54.01
+Bill Total: Rs 1650.0
+Eligible Total: Rs 1650.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

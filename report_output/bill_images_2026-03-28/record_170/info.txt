@@ -1,0 +1,10 @@
+Name: Karunasiri
+Phone: 0771840293
+Bill #: 122186
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-28T08:50:04.58
+Bill Total: Rs 0.0
+Eligible Total: Rs 1050.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

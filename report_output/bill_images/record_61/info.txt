@@ -1,0 +1,10 @@
+Name: Shamalika Niroshani
+Phone: 0767601824
+Bill #: FA5445
+Shop: කුමාර සුපර් 03
+Date (LKR): 2026-03-27T09:09:11.73
+Bill Total: Rs 1105.0
+Eligible Total: Rs 1055.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

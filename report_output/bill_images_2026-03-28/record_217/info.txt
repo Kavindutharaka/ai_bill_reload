@@ -1,0 +1,10 @@
+Name: Manjula
+Phone: 0771558808
+Bill #: 1000000076
+Shop: Sethsiri Family Super
+Date (LKR): 2026-03-28T16:17:22.12
+Bill Total: Rs 0.0
+Eligible Total: Rs 1026.59
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

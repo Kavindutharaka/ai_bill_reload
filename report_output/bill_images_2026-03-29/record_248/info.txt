@@ -1,0 +1,10 @@
+Name: Dinesh
+Phone: 0771266862
+Bill #: 1000000095
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-29 12:32:10
+Bill Total: Rs 0.0
+Eligible Total: Rs 1036.3
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

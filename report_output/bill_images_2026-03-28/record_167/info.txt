@@ -1,0 +1,10 @@
+Name: Ravin
+Phone: 0766909663
+Bill #: 001#5811
+Shop: RICHMAART SUPERS
+Date (LKR): 2026-03-28T08:40:46.83
+Bill Total: Rs 1080.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

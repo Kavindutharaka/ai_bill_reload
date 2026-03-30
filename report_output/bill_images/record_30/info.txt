@@ -1,0 +1,10 @@
+Name: Renuka
+Phone: 0778100847
+Bill #: 00000260
+Shop: U MART
+Date (LKR): 2026-03-26 17:17:50
+Bill Total: Rs 80.0
+Eligible Total: Rs 1100.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: None

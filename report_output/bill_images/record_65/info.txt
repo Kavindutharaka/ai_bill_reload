@@ -1,0 +1,10 @@
+Name: Lakshan
+Phone: 0769887016
+Bill #: 00000019
+Shop: Karunarathna Stores
+Date (LKR): 2026-03-27T09:34:21.38
+Bill Total: Rs 1090.02
+Eligible Total: Rs 1090.02
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

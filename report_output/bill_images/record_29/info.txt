@@ -1,0 +1,10 @@
+Name: Sanjiwa
+Phone: 0777070358
+Bill #: 00000238
+Shop: U Mart
+Date (LKR): 2026-03-26T11:01:44.93
+Bill Total: Rs 2270.0
+Eligible Total: Rs 1195.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: None

@@ -1,0 +1,10 @@
+Name: Chandramoh
+Phone: 0741642680
+Bill #: 366658
+Shop: AKSHAYAFOODCITY.COM
+Date (LKR): 2026-03-28T07:03:57.61
+Bill Total: Rs 27100.0
+Eligible Total: Rs 989.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

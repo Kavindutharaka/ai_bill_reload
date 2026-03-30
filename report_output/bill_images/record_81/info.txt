@@ -1,0 +1,10 @@
+Name: Kanna
+Phone: 0769099760
+Bill #: IN032916
+Shop: MARIYAL STORES
+Date (LKR): 2026-03-27 16:16:39
+Bill Total: Rs 0.0
+Eligible Total: Rs 14426.68
+Status: ELIGIBLE
+Reload: PENDING
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Saujiy
+Phone: 0767019161
+Bill #: 00000246
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27T12:27:20.8
+Bill Total: Rs 15772.19
+Eligible Total: Rs 750.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

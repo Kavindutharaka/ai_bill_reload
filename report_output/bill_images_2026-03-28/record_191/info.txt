@@ -1,0 +1,10 @@
+Name: shavinda treyhan
+Phone: 0766928831
+Bill #: 1000000110
+Shop: TRIPLE FIVE SUPERCITY
+Date (LKR): 2026-03-28T10:51:17.03
+Bill Total: Rs 0.0
+Eligible Total: Rs 770.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

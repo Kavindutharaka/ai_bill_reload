@@ -1,0 +1,10 @@
+Name: Sareavana pavan
+Phone: 0777666690
+Bill #: 2385808
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27T06:39:50.27
+Bill Total: Rs 2950.0
+Eligible Total: Rs 1850.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

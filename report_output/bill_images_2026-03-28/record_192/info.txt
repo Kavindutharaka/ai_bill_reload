@@ -1,0 +1,10 @@
+Name: Hiruni
+Phone: 0767693926
+Bill #: 1000000150
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-28 16:25:59
+Bill Total: Rs 0.0
+Eligible Total: Rs 993.45
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: long

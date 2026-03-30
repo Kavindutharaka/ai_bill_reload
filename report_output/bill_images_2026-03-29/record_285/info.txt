@@ -1,0 +1,10 @@
+Name: L.kumara
+Phone: 0776967120
+Bill #: 44168240
+Shop: MAHAJANA SUPER
+Date (LKR): 2026-03-29 16:12:59
+Bill Total: Rs 15235.63
+Eligible Total: Rs 935.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

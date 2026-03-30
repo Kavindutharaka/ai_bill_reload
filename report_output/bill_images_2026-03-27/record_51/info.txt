@@ -1,0 +1,10 @@
+Name: Vijani
+Phone: 0778272633
+Bill #: 1364161
+Shop: coop
+Date (LKR): 2026-03-27T07:47:53.52
+Bill Total: Rs 9340.0
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

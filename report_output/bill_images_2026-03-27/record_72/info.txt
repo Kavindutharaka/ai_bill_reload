@@ -1,0 +1,10 @@
+Name: KD KAMAL
+Phone: 0774922443
+Bill #: IN032914
+Shop: VINAYAGAR STORES
+Date (LKR): 2026-03-27T10:24:17.99
+Bill Total: Rs 0.0
+Eligible Total: Rs 11100.13
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Elanesh perera
+Phone: 0774251489
+Bill #: 4074740
+Shop: 
+Date (LKR): 2026-03-27 13:36:20
+Bill Total: Rs 2288.0
+Eligible Total: Rs 1150.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

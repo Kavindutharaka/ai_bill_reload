@@ -1,0 +1,10 @@
+Name: Ishani
+Phone: 0765430135
+Bill #: 1000000039
+Shop: MARIYA'S GROCERY
+Date (LKR): 2026-03-29T06:32:56.81
+Bill Total: Rs 12000.0
+Eligible Total: Rs 1770.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

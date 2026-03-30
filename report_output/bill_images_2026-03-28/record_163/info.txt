@@ -1,0 +1,10 @@
+Name: Vihanga pawan
+Phone: 0769774825
+Bill #: 07732102
+Shop: UPEKA SUPER
+Date (LKR): 2026-03-28 13:47:50
+Bill Total: Rs 22630.62
+Eligible Total: Rs 590.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

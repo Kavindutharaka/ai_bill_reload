@@ -1,0 +1,10 @@
+Name: Mrs Nilmini Herath
+Phone: 0775136096
+Bill #: 07
+Shop: SUNRISE SUPER
+Date (LKR): 2026-03-29T04:11:23.32
+Bill Total: Rs 1360.0
+Eligible Total: Rs 1115.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

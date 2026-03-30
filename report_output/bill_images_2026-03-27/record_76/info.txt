@@ -1,0 +1,10 @@
+Name: Damayanthi
+Phone: 0706666552
+Bill #: 00000112
+Shop: 
+Date (LKR): 2026-03-27 15:58:10
+Bill Total: Rs 7602.04
+Eligible Total: Rs 1120.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

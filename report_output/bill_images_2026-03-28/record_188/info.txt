@@ -1,0 +1,10 @@
+Name: Hemal
+Phone: 0714441050
+Bill #: 1000000147
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-28 16:10:17
+Bill Total: Rs 1571.4
+Eligible Total: Rs 1571.4
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Isuri
+Phone: 0742857982
+Bill #: 02009402
+Shop: යකුපිටිය සුපර්
+Date (LKR): 2026-03-27 10:36:18
+Bill Total: Rs 6230.45
+Eligible Total: Rs 1285.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

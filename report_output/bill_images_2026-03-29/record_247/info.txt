@@ -1,0 +1,10 @@
+Name: Abi
+Phone: 0775155391
+Bill #: 2387323
+Shop: SIVASAKTH
+Date (LKR): 2026-03-29 12:14:43
+Bill Total: Rs 1685.0
+Eligible Total: Rs 1065.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

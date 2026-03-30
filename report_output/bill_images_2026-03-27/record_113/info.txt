@@ -1,0 +1,10 @@
+Name: Rajapaksha
+Phone: 0772782858
+Bill #: 4166443
+Shop: 
+Date (LKR): 2026-03-27 19:45:14
+Bill Total: Rs 430.0
+Eligible Total: Rs 1205.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Mahesh
+Phone: 0769181228
+Bill #: 00000074
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27T07:32:39.47
+Bill Total: Rs 1190.0
+Eligible Total: Rs 1350.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Warushavithana Chamini
+Phone: 0743599160
+Bill #: 121918
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-27T16:50:31.19
+Bill Total: Rs 6105.0
+Eligible Total: Rs 1455.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

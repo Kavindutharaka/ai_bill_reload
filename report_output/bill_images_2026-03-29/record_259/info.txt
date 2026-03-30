@@ -1,0 +1,10 @@
+Name: Vilosan
+Phone: 0703578662
+Bill #: 2387417
+Shop: SIVASAKTH
+Date (LKR): 2026-03-29T08:39:46.44
+Bill Total: Rs 1150.0
+Eligible Total: Rs 1150.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

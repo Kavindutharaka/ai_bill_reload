@@ -1,0 +1,10 @@
+Name: Khan
+Phone: 0775000965
+Bill #: 26-200-000962
+Shop: DAMSARA FOOD CITY
+Date (LKR): 2026-03-27T11:09:02.71
+Bill Total: Rs 1300.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

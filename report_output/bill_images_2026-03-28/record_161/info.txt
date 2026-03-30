@@ -1,0 +1,10 @@
+Name: Sanju
+Phone: 0757473603
+Bill #: 365733
+Shop: Akshaya Food Centre
+Date (LKR): 2026-03-28T08:01:20.67
+Bill Total: Rs 15000.0
+Eligible Total: Rs 2270.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

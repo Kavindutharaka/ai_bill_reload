@@ -1,0 +1,10 @@
+Name: W.n.m.wicramasinghe
+Phone: 0716266554
+Bill #: 1136389
+Shop: SuperValu
+Date (LKR): 2026-03-28 14:48:54
+Bill Total: Rs 3815.0
+Eligible Total: Rs 1080.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Osanda
+Phone: 0757810824
+Bill #: 1000000125
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-28 13:53:31
+Bill Total: Rs 0.0
+Eligible Total: Rs 1013.71
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

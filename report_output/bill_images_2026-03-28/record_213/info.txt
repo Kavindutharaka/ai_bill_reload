@@ -1,0 +1,10 @@
+Name: Nishantha
+Phone: 0764453450
+Bill #: 2685183
+Shop: 
+Date (LKR): 2026-03-28T14:54:37.75
+Bill Total: Rs 3737.09
+Eligible Total: Rs 1538.19
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

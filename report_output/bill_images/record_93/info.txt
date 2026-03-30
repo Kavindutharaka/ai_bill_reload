@@ -1,0 +1,10 @@
+Name: Shama
+Phone: 0779278621
+Bill #: 4159229
+Shop: MAHAJANA SUPER
+Date (LKR): 2026-03-27 16:52:57
+Bill Total: Rs 0.0
+Eligible Total: Rs 1140.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

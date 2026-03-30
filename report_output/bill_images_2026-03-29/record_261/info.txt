@@ -1,0 +1,10 @@
+Name: Dinuka
+Phone: 0763358253
+Bill #: 00000008
+Shop: 
+Date (LKR): 2026-03-29 14:17:11
+Bill Total: Rs 1070.0
+Eligible Total: Rs 1070.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

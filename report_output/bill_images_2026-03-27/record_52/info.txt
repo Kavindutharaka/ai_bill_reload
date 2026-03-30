@@ -1,0 +1,10 @@
+Name: Abinaya
+Phone: 0774735289
+Bill #: 2385882
+Shop: SIVASAKTHI
+Date (LKR): 2026-03-27T07:49:43.21
+Bill Total: Rs 29155.01
+Eligible Total: Rs 1180.01
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

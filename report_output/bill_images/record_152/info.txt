@@ -1,0 +1,10 @@
+Name: Ameer kaushalya
+Phone: 0757392720
+Bill #: 1000000028
+Shop: WIMAL SUPER
+Date (LKR): 2026-03-28T07:31:35.07
+Bill Total: Rs 1092.5
+Eligible Total: Rs 1092.5
+Status: ELIGIBLE
+Reload: PENDING
+Capture Mode: single

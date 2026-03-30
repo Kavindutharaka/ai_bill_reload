@@ -1,0 +1,10 @@
+Name: Roja
+Phone: 0762864811
+Bill #: 365625
+Shop: Akshaya Food Centr
+Date (LKR): 2026-03-28 12:12:20
+Bill Total: Rs 13493.0
+Eligible Total: Rs 1080.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

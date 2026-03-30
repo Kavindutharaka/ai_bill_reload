@@ -1,0 +1,10 @@
+Name: Husma
+Phone: 0768245040
+Bill #: 00000360
+Shop: U Mart
+Date (LKR): 2026-03-28T09:41:45.04
+Bill Total: Rs 6696.0
+Eligible Total: Rs 860.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

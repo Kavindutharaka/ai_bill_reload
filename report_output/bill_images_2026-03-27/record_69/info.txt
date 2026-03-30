@@ -1,0 +1,10 @@
+Name: Venuri Nawanjala
+Phone: 0740984873
+Bill #: 1364392
+Shop: coop
+Date (LKR): 2026-03-27 15:27:16
+Bill Total: Rs 1275.0
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

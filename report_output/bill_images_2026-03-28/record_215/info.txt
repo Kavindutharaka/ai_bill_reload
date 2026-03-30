@@ -1,0 +1,10 @@
+Name: Nishantha
+Phone: 0777589694
+Bill #: 4077695
+Shop: MKB
+Date (LKR): 2026-03-28 20:49:29
+Bill Total: Rs 9321.0
+Eligible Total: Rs 1150.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Subakaran
+Phone: 0768841837
+Bill #: SALE/POS2026/03/400371
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28 14:42:08
+Bill Total: Rs 2010.0
+Eligible Total: Rs 1170.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

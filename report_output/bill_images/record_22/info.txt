@@ -1,0 +1,10 @@
+Name: Dinaya
+Phone: 0764645180
+Bill #: 00000001
+Shop: ජෙ බී සුපර්
+Date (LKR): 2026-03-26T05:26:07.07
+Bill Total: Rs 1300.0
+Eligible Total: Rs 1300.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: None

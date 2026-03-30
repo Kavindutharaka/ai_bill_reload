@@ -2,7 +2,7 @@ var app = angular.module('reloadApp', []);
 
 // ===== CONFIG =====
 app.constant('CONFIG', {
-    GEMINI_API_KEY: 'AIzaSyANbBisWLmhHHb_fbH1jhr1g6OGi4sKknI',
+    GEMINI_API_KEY: 'AIzaSyCx1i75SnxLqM7zkZYR8yPRF3y1mI4pXcQ',
     GEMINI_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',
     API_URL: 'https://mas.phvtech.com/api/Master/sp',
     MAX_RETRIES: 3,
@@ -67,7 +67,10 @@ app.constant('LANG', {
         titlePartial: 'Couldn\'t Read Full Bill',
         msgPartial: 'Some details on your bill couldn\'t be read clearly. Please retake the photo ensuring the entire bill is visible.',
         titleNoBillNum: 'No Bill Number',
-        msgNoBillNum: 'Could not extract a bill number. Please ensure the bill reference number is visible.'
+        msgNoBillNum: 'Could not extract a bill number. Please ensure the bill reference number is visible.',
+        contactWhatsApp: 'If you have any issues, contact us on WhatsApp',
+        titleAlreadySubmitted: 'Already Submitted',
+        msgAlreadySubmitted: 'You have already submitted a bill. Only one submission per person is allowed.'
     },
     si: {
         selectLang: 'භාෂාව තෝරන්න',
@@ -118,7 +121,10 @@ app.constant('LANG', {
         titlePartial: 'සම්පූර්ණ බිල්පත කියවිය නොහැක',
         msgPartial: 'ඔබේ බිල්පතේ සමහර විස්තර පැහැදිලිව කියවිය නොහැකි විය. සම්පූර්ණ බිල්පත පෙනෙන පරිදි ඡායාරූපය නැවත ගන්න.',
         titleNoBillNum: 'බිල් අංකයක් නැත',
-        msgNoBillNum: 'බිල් අංකයක් ලබා ගත නොහැකි විය. කරුණාකර බිල්පතේ යොමු අංකය පෙනෙන බවට සහතික කරන්න.'
+        msgNoBillNum: 'බිල් අංකයක් ලබා ගත නොහැකි විය. කරුණාකර බිල්පතේ යොමු අංකය පෙනෙන බවට සහතික කරන්න.',
+        contactWhatsApp: 'ගැටලුවක් ඇත්නම්, WhatsApp හරහා අප අමතන්න',
+        titleAlreadySubmitted: 'දැනටමත් ඉදිරිපත් කර ඇත',
+        msgAlreadySubmitted: 'ඔබ දැනටමත් බිල්පතක් ඉදිරිපත් කර ඇත. එක් පුද්ගලයෙකුට එක් ඉදිරිපත් කිරීමක් පමණක් අවසර ඇත.'
     },
     ta: {
         selectLang: 'மொழியைத் தேர்ந்தெடுக்கவும்',
@@ -169,7 +175,8 @@ app.constant('LANG', {
         titlePartial: 'முழு பில்லை படிக்க முடியவில்லை',
         msgPartial: 'உங்கள் பில்லின் சில விவரங்களை தெளிவாக படிக்க முடியவில்லை. முழு பில்லும் தெரியும்படி மீண்டும் புகைப்படம் எடுங்கள்.',
         titleNoBillNum: 'பில் எண் இல்லை',
-        msgNoBillNum: 'பில் எண்ணைப் பெற முடியவில்லை. பில் குறிப்பு எண் தெரியும்படி உறுதி செய்யவும்.'
+        msgNoBillNum: 'பில் எண்ணைப் பெற முடியவில்லை. பில் குறிப்பு எண் தெரியும்படி உறுதி செய்யவும்.',
+        contactWhatsApp: 'ஏதேனும் சிக்கல் இருந்தால், WhatsApp மூலம் எங்களை தொடர்பு கொள்ளவும்'
     }
 });
 
@@ -635,7 +642,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
         GeminiService.analyzeBill(images, function(attempt) {
             $scope.currentAttempt = attempt;
         }).then(function(data) {
-            handleGeminiResult(data, firstImage);
+            handleGeminiResult(data, images);
         }).catch(function(err) {
             $scope.result = {
                 type: 'error',
@@ -648,7 +655,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
         });
     };
 
-    function handleGeminiResult(data, billImageBase64) {
+    function handleGeminiResult(data, allImages) {
         if (data.status === 'unclear_image') {
             $scope.result = {
                 type: 'error',
@@ -732,14 +739,14 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
             }
 
             // Process eligibility
-            processEligibility(data, billImageBase64);
+            processEligibility(data, allImages);
         }).catch(function() {
             // If DB check fails, still process
-            processEligibility(data, billImageBase64);
+            processEligibility(data, allImages);
         });
     }
 
-    function processEligibility(data, billImageBase64) {
+    function processEligibility(data, allImages) {
         var eligibleTotal = data.eligible_total || 0;
         var isEligible = eligibleTotal >= CONFIG.ELIGIBLE_THRESHOLD;
         var items = data.items || [];
@@ -756,10 +763,11 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
         var billDate = (data.bill_date || '').replace(/'/g, "''");
         var billTotal = data.bill_total || 0;
 
-        var insertSql = "INSERT INTO rek_cc_reg (name, phone, bill_image, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, created_at) " +
-            "VALUES (N'" + userName + "', '" + phone + "', '" + (billImageBase64 || '').substring(0, 100) + "...stored', '" +
+        var captureMode = $scope.captureMode || 'single';
+        var insertSql = "INSERT INTO rek_cc_reg (name, phone, bill_image, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, capture_mode, created_at) " +
+            "VALUES (N'" + userName + "', '" + phone + "', 'pending', '" +
             billNum + "', '" + billDate + "', N'" + shopName + "', " + billTotal + ", " + eligibleTotal + ", " +
-            (isEligible ? 1 : 0) + ", N'" + itemsJson + "', GETUTCDATE()); SELECT SCOPE_IDENTITY() as newId";
+            (isEligible ? 1 : 0) + ", N'" + itemsJson + "', '" + captureMode + "', GETUTCDATE()); SELECT SCOPE_IDENTITY() as newId";
 
         ApiService.query(insertSql).then(function(resp) {
             var regId = null;
@@ -782,11 +790,20 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
                 ApiService.query(itemsSql);
             }
 
-            // Also update with full bill image
-            if (regId && billImageBase64) {
-                var imgData = billImageBase64.replace(/'/g, "''");
-                var updateSql = "UPDATE rek_cc_reg SET bill_image = '" + imgData + "' WHERE id = " + regId;
+            // Save all bill images
+            if (regId && allImages.length > 0) {
+                var img1 = (allImages[0] || '').replace(/'/g, "''");
+                var updateSql = "UPDATE rek_cc_reg SET bill_image = '" + img1 + "' WHERE id = " + regId;
                 ApiService.query(updateSql);
+
+                if (allImages[1]) {
+                    var img2 = allImages[1].replace(/'/g, "''");
+                    ApiService.query("UPDATE rek_cc_reg SET bill_image_2 = '" + img2 + "' WHERE id = " + regId);
+                }
+                if (allImages[2]) {
+                    var img3 = allImages[2].replace(/'/g, "''");
+                    ApiService.query("UPDATE rek_cc_reg SET bill_image_3 = '" + img3 + "' WHERE id = " + regId);
+                }
             }
         });
 
@@ -860,7 +877,7 @@ app.controller('ReloadCtrl', ['$scope', 'ApiService', function($scope, ApiServic
 
     $scope.loadData = function() {
         $scope.loading = true;
-        var sql = "SELECT * FROM rek_cc_reg WHERE is_eligible = 1 ORDER BY created_at DESC";
+        var sql = "SELECT id, name, phone, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, capture_mode, reload_sent, created_at FROM rek_cc_reg WHERE is_eligible = 1 ORDER BY created_at DESC";
         ApiService.query(sql).then(function(resp) {
             var data = resp.data || [];
             for (var i = 0; i < data.length; i++) {
@@ -878,9 +895,27 @@ app.controller('ReloadCtrl', ['$scope', 'ApiService', function($scope, ApiServic
     };
 
     $scope.detailRecord = null;
+    $scope.detailLoading = false;
 
     $scope.showItemsModal = function(record) {
         $scope.detailRecord = record;
+        $scope.detailRecord._billImages = [];
+        $scope.detailLoading = true;
+        var sql = "SELECT bill_image, bill_image_2, bill_image_3, capture_mode FROM rek_cc_reg WHERE id = " + record.id;
+        ApiService.query(sql).then(function(resp) {
+            if (resp.data && resp.data.length > 0) {
+                var r = resp.data[0];
+                var imgs = [];
+                if (r.bill_image && r.bill_image.indexOf('data:image') === 0) imgs.push(r.bill_image);
+                if (r.bill_image_2 && r.bill_image_2.indexOf('data:image') === 0) imgs.push(r.bill_image_2);
+                if (r.bill_image_3 && r.bill_image_3.indexOf('data:image') === 0) imgs.push(r.bill_image_3);
+                $scope.detailRecord._billImages = imgs;
+                $scope.detailRecord.capture_mode = r.capture_mode || 'single';
+            }
+            $scope.detailLoading = false;
+        }).catch(function() {
+            $scope.detailLoading = false;
+        });
     };
 
     $scope.closeModal = function() { $scope.detailRecord = null; };
@@ -922,12 +957,18 @@ app.controller('ReloadCtrl', ['$scope', 'ApiService', function($scope, ApiServic
 }]);
 
 // ===== ADMIN CONTROLLER (admin.html) =====
-app.controller('AdminCtrl', ['$scope', 'ApiService', function($scope, ApiService) {
+app.controller('AdminCtrl', ['$scope', 'ApiService', 'CONFIG', function($scope, ApiService, CONFIG) {
     $scope.records = [];
     $scope.allRecords = [];
     $scope.pageRecords = [];
     $scope.loading = true;
-    $scope.filters = { dateFrom: '', dateTo: '', billNumber: '', eligibility: 'all', search: '' };
+    $scope.copyText = 'Copy Summary';
+
+    // Default to today (LKR timezone)
+    var now = new Date();
+    var lkrNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + CONFIG.LKR_OFFSET_HOURS * 3600000);
+    var today = new Date(lkrNow.getFullYear(), lkrNow.getMonth(), lkrNow.getDate());
+    $scope.filters = { dateFrom: today, dateTo: today, billNumber: '', eligibility: 'all', search: '' };
     $scope.summary = { total: 0, eligible: 0, notEligible: 0, reloadSent: 0 };
 
     // Pagination
@@ -946,10 +987,9 @@ app.controller('AdminCtrl', ['$scope', 'ApiService', function($scope, ApiService
 
     $scope.loadData = function() {
         $scope.loading = true;
-        var sql = "SELECT * FROM rek_cc_reg ORDER BY created_at DESC";
+        var sql = "SELECT id, name, phone, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, capture_mode, reload_sent, created_at FROM rek_cc_reg ORDER BY created_at DESC";
         ApiService.query(sql).then(function(resp) {
             $scope.allRecords = parseRecords(resp.data || []);
-            $scope.calculateSummary();
             $scope.applyFilters();
             $scope.loading = false;
         }).catch(function() {
@@ -961,11 +1001,11 @@ app.controller('AdminCtrl', ['$scope', 'ApiService', function($scope, ApiService
     };
 
     $scope.calculateSummary = function() {
-        var all = $scope.allRecords;
-        $scope.summary.total = all.length;
-        $scope.summary.eligible = all.filter(function(r) { return r.is_eligible; }).length;
-        $scope.summary.notEligible = all.filter(function(r) { return !r.is_eligible; }).length;
-        $scope.summary.reloadSent = all.filter(function(r) { return r.reload_sent; }).length;
+        var data = $scope.records;
+        $scope.summary.total = data.length;
+        $scope.summary.eligible = data.filter(function(r) { return r.is_eligible; }).length;
+        $scope.summary.notEligible = data.filter(function(r) { return !r.is_eligible; }).length;
+        $scope.summary.reloadSent = data.filter(function(r) { return r.reload_sent; }).length;
     };
 
     $scope.applyFilters = function() {
@@ -990,22 +1030,31 @@ app.controller('AdminCtrl', ['$scope', 'ApiService', function($scope, ApiService
 
             if ($scope.filters.dateFrom) {
                 var from = new Date($scope.filters.dateFrom);
-                var created = new Date(r.created_at);
-                if (created < from) return false;
+                // Convert created_at (UTC) to LKR for comparison
+                var createdUtc = new Date(r.created_at);
+                var createdLkr = new Date(createdUtc.getTime() + createdUtc.getTimezoneOffset() * 60000 + CONFIG.LKR_OFFSET_HOURS * 3600000);
+                if (createdLkr < from) return false;
             }
             if ($scope.filters.dateTo) {
                 var to = new Date($scope.filters.dateTo);
                 to.setHours(23, 59, 59);
-                var createdD = new Date(r.created_at);
-                if (createdD > to) return false;
+                var createdUtc2 = new Date(r.created_at);
+                var createdLkr2 = new Date(createdUtc2.getTime() + createdUtc2.getTimezoneOffset() * 60000 + CONFIG.LKR_OFFSET_HOURS * 3600000);
+                if (createdLkr2 > to) return false;
             }
             return true;
         });
+        $scope.calculateSummary();
         $scope.updatePage();
     };
 
-    $scope.clearFilters = function() {
+    $scope.showAll = function() {
         $scope.filters = { dateFrom: '', dateTo: '', billNumber: '', eligibility: 'all', search: '' };
+        $scope.applyFilters();
+    };
+
+    $scope.clearFilters = function() {
+        $scope.filters = { dateFrom: today, dateTo: today, billNumber: '', eligibility: 'all', search: '' };
         $scope.applyFilters();
     };
 
@@ -1023,22 +1072,104 @@ app.controller('AdminCtrl', ['$scope', 'ApiService', function($scope, ApiService
         if ($scope.currentPage < $scope.pageTotalPages) { $scope.currentPage++; $scope.updatePage(); }
     };
 
-    $scope.detailRecord = null;
-
-    $scope.showItemsModal = function(record) {
-        $scope.detailRecord = record;
+    $scope.openDetail = function(record) {
+        window.open('detail.html?id=' + record.id, '_blank');
     };
 
-    $scope.closeModal = function() { $scope.detailRecord = null; };
-
-    $scope.toggleReloadSent = function(record) {
-        var newVal = record.reload_sent ? 0 : 1;
-        var sql = "UPDATE rek_cc_reg SET reload_sent = " + newVal + " WHERE id = " + record.id;
-        ApiService.query(sql).then(function() {
-            record.reload_sent = newVal;
-            $scope.calculateSummary();
+    // Copy summary to clipboard
+    $scope.copySummary = function() {
+        var text = 'Total Submissions - ' + $scope.summary.total + '\n\n' +
+                   'Reload Won - ' + $scope.summary.eligible + '\n\n' +
+                   'Not Eligible - ' + $scope.summary.notEligible;
+        navigator.clipboard.writeText(text).then(function() {
+            $scope.$apply(function() { $scope.copyText = 'Copied!'; });
+            setTimeout(function() { $scope.$apply(function() { $scope.copyText = 'Copy Summary'; }); }, 2000);
         });
     };
 
+    // Download filtered data as Excel
+    $scope.downloadExcel = function() {
+        var rows = [['#', 'Name', 'Phone', 'Date/Time (LKR)', 'Bill Number', 'Shop', 'Bill Total', 'Eligible Total', 'Status', 'Reload']];
+        for (var i = 0; i < $scope.records.length; i++) {
+            var r = $scope.records[i];
+            // Convert created_at to LKR
+            var lkrStr = '';
+            try {
+                var d = new Date(r.created_at);
+                var lkr = new Date(d.getTime() + d.getTimezoneOffset() * 60000 + CONFIG.LKR_OFFSET_HOURS * 3600000);
+                lkrStr = lkr.getFullYear() + '-' + ('0'+(lkr.getMonth()+1)).slice(-2) + '-' + ('0'+lkr.getDate()).slice(-2) + ' ' +
+                         ('0'+lkr.getHours()).slice(-2) + ':' + ('0'+lkr.getMinutes()).slice(-2) + ':' + ('0'+lkr.getSeconds()).slice(-2);
+            } catch(e) { lkrStr = r.created_at; }
+            rows.push([
+                i + 1, r.name, r.phone, lkrStr, r.bill_number, r.shop_name || '-',
+                r.bill_total, r.eligible_total,
+                r.is_eligible ? 'ELIGIBLE' : 'NOT ELIGIBLE',
+                r.reload_sent ? 'SENT' : (r.is_eligible ? 'PENDING' : 'N/A')
+            ]);
+        }
+        // Build CSV and download as .csv (no external lib needed)
+        var csv = rows.map(function(row) {
+            return row.map(function(cell) {
+                var s = String(cell == null ? '' : cell);
+                return s.indexOf(',') > -1 || s.indexOf('"') > -1 || s.indexOf('\n') > -1 ? '"' + s.replace(/"/g, '""') + '"' : s;
+            }).join(',');
+        }).join('\n');
+        var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        var dateStr = today.getFullYear() + '-' + ('0'+(today.getMonth()+1)).slice(-2) + '-' + ('0'+today.getDate()).slice(-2);
+        link.download = 'Avurudu_Reload_Report_' + dateStr + '.csv';
+        link.click();
+    };
+
     $scope.loadData();
+}]);
+
+// ===== DETAIL CONTROLLER (detail.html) =====
+app.controller('DetailCtrl', ['$scope', 'ApiService', function($scope, ApiService) {
+    $scope.loading = true;
+    $scope.imagesLoading = true;
+    $scope.record = null;
+    $scope.items = [];
+    $scope.billImages = [];
+    $scope.imageLabels = ['Top Section', 'Middle Section', 'Bottom Section'];
+
+    // Get ID from URL query param
+    var params = new URLSearchParams(window.location.search);
+    var recordId = params.get('id');
+
+    if (!recordId) {
+        $scope.loading = false;
+        return;
+    }
+
+    // Step 1: Load record data (no images)
+    var sql = "SELECT id, name, phone, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, capture_mode, reload_sent, created_at FROM rek_cc_reg WHERE id = " + recordId;
+    ApiService.query(sql).then(function(resp) {
+        if (resp.data && resp.data.length > 0) {
+            $scope.record = resp.data[0];
+            try { $scope.items = JSON.parse($scope.record.items_json); } catch (e) { $scope.items = []; }
+            $scope.record.capture_mode = $scope.record.capture_mode || 'single';
+        }
+        $scope.loading = false;
+
+        // Step 2: Load images separately
+        if ($scope.record) {
+            var imgSql = "SELECT bill_image, bill_image_2, bill_image_3 FROM rek_cc_reg WHERE id = " + recordId;
+            ApiService.query(imgSql).then(function(imgResp) {
+                if (imgResp.data && imgResp.data.length > 0) {
+                    var r = imgResp.data[0];
+                    if (r.bill_image && r.bill_image.indexOf('data:image') === 0) $scope.billImages.push(r.bill_image);
+                    if (r.bill_image_2 && r.bill_image_2.indexOf('data:image') === 0) $scope.billImages.push(r.bill_image_2);
+                    if (r.bill_image_3 && r.bill_image_3.indexOf('data:image') === 0) $scope.billImages.push(r.bill_image_3);
+                }
+                $scope.imagesLoading = false;
+            }).catch(function() {
+                $scope.imagesLoading = false;
+            });
+        }
+    }).catch(function() {
+        $scope.loading = false;
+        $scope.imagesLoading = false;
+    });
 }]);

@@ -1,0 +1,10 @@
+Name: Jesmine
+Phone: 0741366121
+Bill #: 002
+Shop: Richmart Super
+Date (LKR): 2026-03-28 13:57:13
+Bill Total: Rs 0.0
+Eligible Total: Rs 1660.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

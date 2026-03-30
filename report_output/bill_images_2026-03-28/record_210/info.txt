@@ -1,0 +1,10 @@
+Name: T.A.K. Piyasena
+Phone: 0776675046
+Bill #: 1000246
+Shop: SANASA FOOD CITY
+Date (LKR): 2026-03-28 19:48:48
+Bill Total: Rs 1085.0
+Eligible Total: Rs 95.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

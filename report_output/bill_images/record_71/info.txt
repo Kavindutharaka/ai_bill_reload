@@ -1,0 +1,10 @@
+Name: Kamal
+Phone: 0774922443
+Bill #: 1016705
+Shop: R STORES
+Date (LKR): 2026-03-27 15:52:28
+Bill Total: Rs 25626.37
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Sanika
+Phone: 0767929912
+Bill #: 4064730
+Shop: supervalu
+Date (LKR): 2026-03-28T10:06:53.11
+Bill Total: Rs 43244.0
+Eligible Total: Rs 1291.4
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

@@ -1,0 +1,10 @@
+Name: Ziran Fuzooly
+Phone: 0767997527
+Bill #: SALL/POS2025/03/400883
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-29 18:59:03
+Bill Total: Rs 8797.0
+Eligible Total: Rs 1539.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Rathiees kumar
+Phone: 0774531083
+Bill #: 2385749
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27T05:51:33.99
+Bill Total: Rs 19301.0
+Eligible Total: Rs 1005.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

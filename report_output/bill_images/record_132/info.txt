@@ -1,0 +1,10 @@
+Name: Warusha
+Phone: 0770509856
+Bill #: 122109
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-28 11:29:12
+Bill Total: Rs 14074.0
+Eligible Total: Rs 1310.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

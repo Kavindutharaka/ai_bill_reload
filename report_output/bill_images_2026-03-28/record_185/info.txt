@@ -1,0 +1,10 @@
+Name: Shahan
+Phone: 0770360121
+Bill #: 001#5831
+Shop: RICHMAART SUPERS
+Date (LKR): 2026-03-28 15:44:52
+Bill Total: Rs 3840.0
+Eligible Total: Rs 1330.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

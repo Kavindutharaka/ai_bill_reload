@@ -1,0 +1,10 @@
+Name: Hamsi
+Phone: 0752997866
+Bill #: 122126
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-28 11:52:41
+Bill Total: Rs 22431.0
+Eligible Total: Rs 1385.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

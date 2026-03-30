@@ -1,0 +1,10 @@
+Name: Mnof
+Phone: 0758401240
+Bill #: 214011136985
+Shop: FOUZY SUPER MARKET
+Date (LKR): 2026-03-28 13:22:01
+Bill Total: Rs 1485.0
+Eligible Total: Rs 1485.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

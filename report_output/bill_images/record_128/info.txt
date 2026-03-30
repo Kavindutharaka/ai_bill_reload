@@ -1,0 +1,10 @@
+Name: Nuwan Buddhika
+Phone: 0768750713
+Bill #: 200000000 3
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-28 11:08:58
+Bill Total: Rs 0.0
+Eligible Total: Rs 1010.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

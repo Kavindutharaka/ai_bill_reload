@@ -1,0 +1,10 @@
+Name: Khan
+Phone: 0777008459
+Bill #: 4166343
+Shop: MKB Supermart
+Date (LKR): 2026-03-27 16:37:29
+Bill Total: Rs 2137.0
+Eligible Total: Rs 2137.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

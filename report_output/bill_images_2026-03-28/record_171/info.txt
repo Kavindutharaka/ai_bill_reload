@@ -1,0 +1,10 @@
+Name: R A Ranasingha
+Phone: 0773596151
+Bill #: 2685071
+Shop: collection
+Date (LKR): 2026-03-28T08:54:50.76
+Bill Total: Rs 5959.44
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

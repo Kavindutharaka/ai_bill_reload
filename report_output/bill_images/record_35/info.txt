@@ -1,0 +1,10 @@
+Name: Nilupa
+Phone: 0719171215
+Bill #: 1000000043
+Shop: MARIYAS GROCERY
+Date (LKR): 2026-03-27 10:23:38
+Bill Total: Rs 5500.0
+Eligible Total: Rs 1225.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

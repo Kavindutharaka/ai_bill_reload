@@ -1,0 +1,10 @@
+Name: Iresha
+Phone: 0713071054
+Bill #: IN-5-131
+Shop: HHP SUPER
+Date (LKR): 2026-03-27 16:47:25
+Bill Total: Rs 0.0
+Eligible Total: Rs 700.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

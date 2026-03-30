@@ -1,0 +1,10 @@
+Name: Sqra
+Phone: 0767843288
+Bill #: 00000104
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27 12:40:41
+Bill Total: Rs 6906.5
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Fathima Waheeda Cader
+Phone: 0775579599
+Bill #: 4077673
+Shop: MKB
+Date (LKR): 2026-03-28 20:41:58
+Bill Total: Rs 0.0
+Eligible Total: Rs 1175.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

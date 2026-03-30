@@ -1,0 +1,10 @@
+Name: Suranga
+Phone: 0740282908
+Bill #: 121876
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-27 17:52:52
+Bill Total: Rs 0.0
+Eligible Total: Rs 1030.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

@@ -1,0 +1,10 @@
+Name: Avaling
+Phone: 0724306875
+Bill #: 2385864
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27 12:58:09
+Bill Total: Rs 2160.01
+Eligible Total: Rs 1000.01
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

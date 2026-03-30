@@ -1,0 +1,10 @@
+Name: Nithuja
+Phone: 0740308964
+Bill #: SALL/POS2026/03/400512
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28 19:05:00
+Bill Total: Rs 1527.0
+Eligible Total: Rs 1204.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

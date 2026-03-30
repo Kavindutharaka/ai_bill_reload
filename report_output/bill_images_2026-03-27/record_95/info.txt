@@ -1,0 +1,10 @@
+Name: Preamini
+Phone: 0764692036
+Bill #: 2386067
+Shop: SIVASAKTHI
+Date (LKR): 2026-03-27 16:57:50
+Bill Total: Rs 10700.01
+Eligible Total: Rs 1325.03
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Susantha
+Phone: 0704173031
+Bill #: 00000124
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27 16:29:10
+Bill Total: Rs 7753.0
+Eligible Total: Rs 1430.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: G.GIREESAN
+Phone: 0774211434
+Bill #: 214011137212
+Shop: FOUZY SUPER MARKET
+Date (LKR): 2026-03-28 21:09:33
+Bill Total: Rs 1050.0
+Eligible Total: Rs 1050.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

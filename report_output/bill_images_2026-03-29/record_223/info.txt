@@ -1,0 +1,10 @@
+Name: Kanna
+Phone: 0711222514
+Bill #: 1000000049
+Shop: MARIYAS GROCERY
+Date (LKR): 2026-03-29 09:38:47
+Bill Total: Rs 10890.0
+Eligible Total: Rs 10890.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Abina
+Phone: 0768644530
+Bill #: 2386029
+Shop: SIVASAKTH
+Date (LKR): 2026-03-27 16:24:46
+Bill Total: Rs 34015.0
+Eligible Total: Rs 1095.01
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

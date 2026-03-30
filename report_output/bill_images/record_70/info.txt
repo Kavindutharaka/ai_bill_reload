@@ -1,0 +1,10 @@
+Name: Sanhinda sithija
+Phone: 0754333228
+Bill #: Rep056/SIN/9426
+Shop: Sujith Stores
+Date (LKR): 2026-03-27T10:15:08.89
+Bill Total: Rs 13744.8
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

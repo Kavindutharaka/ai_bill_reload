@@ -1,0 +1,10 @@
+Name: Anfas
+Phone: 0757796125
+Bill #: 21T/005975-2026/03/27
+Shop: The Taffua Grill
+Date (LKR): 2026-03-28 13:15:22
+Bill Total: Rs 1200.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

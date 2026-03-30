@@ -1,0 +1,10 @@
+Name: Dushyanthi
+Phone: 0771384304
+Bill #: MM0002052
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27T09:23:28.54
+Bill Total: Rs 206286.0
+Eligible Total: Rs 41954.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

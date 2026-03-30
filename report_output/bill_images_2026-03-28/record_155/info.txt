@@ -1,0 +1,10 @@
+Name: Ganga
+Phone: 0775866988
+Bill #: 1000000023
+Shop: SANDASIRI SUPER
+Date (LKR): 2026-03-28T07:42:59.55
+Bill Total: Rs 0.0
+Eligible Total: Rs 1079.25
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

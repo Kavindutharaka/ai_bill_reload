@@ -1,0 +1,10 @@
+Name: Asela dissanayake
+Phone: 0767554696
+Bill #: 1000000078
+Shop: 
+Date (LKR): 2026-03-27 14:09:56
+Bill Total: Rs 15304.19
+Eligible Total: Rs 2750.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

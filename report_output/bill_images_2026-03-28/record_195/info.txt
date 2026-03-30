@@ -1,0 +1,10 @@
+Name: Rajanikanth
+Phone: 0763955077
+Bill #: SALE/POS2026/03/400460
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-28 16:50:46
+Bill Total: Rs 3025.0
+Eligible Total: Rs 1170.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

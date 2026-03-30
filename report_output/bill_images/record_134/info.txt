@@ -1,0 +1,10 @@
+Name: SAFNI
+Phone: 0767125881
+Bill #: RT-32768
+Shop: CTC Traders
+Date (LKR): 2026-03-28T06:05:24.94
+Bill Total: Rs 1500.0
+Eligible Total: Rs 1500.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

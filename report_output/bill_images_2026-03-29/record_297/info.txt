@@ -1,0 +1,10 @@
+Name: Dinusha
+Phone: 0763668635
+Bill #: 122867
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-29 18:10:11
+Bill Total: Rs 1300.0
+Eligible Total: Rs 1300.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

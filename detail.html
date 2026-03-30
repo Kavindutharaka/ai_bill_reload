@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reloadApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Detail - Avurudu Reload Wasi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .detail-header {
+            background: #fec90d; border-radius: 12px; padding: 16px 24px;
+            margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+        }
+        .detail-header h1 { font-size: 20px; color: #333; display: flex; align-items: center; gap: 10px; }
+        .detail-header img { height: 36px; }
+        .detail-card {
+            background: #fff; border-radius: 12px; padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .detail-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .detail-info-item label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 4px; }
+        .detail-info-item span { font-size: 15px; color: #333; font-weight: 600; }
+        .detail-info-item span.eligible { color: #27ae60; }
+        .detail-info-item span.not-eligible { color: #e74c3c; }
+
+        .items-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .items-table th { background: #333; color: #fff; padding: 10px 14px; text-align: left; }
+        .items-table td { padding: 8px 14px; border-bottom: 1px solid #eee; }
+        .items-table tr.eligible-row td { background: #e8f8ef; }
+        .items-table tr.eligible-row:hover td { background: #d4f0e1; }
+        .items-table tr:hover td { background: #fffbe6; }
+        .items-table .brand-tag {
+            background: #27ae60; color: #fff; font-size: 10px;
+            padding: 2px 8px; border-radius: 4px; font-weight: 700;
+        }
+
+        .images-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+        .image-card { border: 2px solid #eee; border-radius: 12px; overflow: hidden; }
+        .image-card img { width: 100%; display: block; }
+        .image-card .image-label {
+            background: #333; color: #fff; text-align: center;
+            padding: 8px; font-size: 13px; font-weight: 600;
+        }
+        .image-card.single-mode { max-width: 500px; margin: 0 auto; }
+
+        .detail-loading { text-align: center; padding: 80px 20px; }
+        .detail-loading .spinner { width: 50px; height: 50px; }
+        .detail-loading p { color: #666; margin-top: 12px; }
+
+        .totals-bar {
+            display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+        }
+        .total-box {
+            background: #f8f9fa; border-radius: 10px; padding: 14px 20px;
+            flex: 1; min-width: 150px; text-align: center;
+        }
+        .total-box .total-label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: 600; }
+        .total-box .total-value { font-size: 22px; font-weight: 800; margin-top: 4px; }
+        .total-box.bill-total .total-value { color: #333; }
+        .total-box.eligible-total .total-value { color: #27ae60; }
+        .total-box.status-box .total-value { font-size: 16px; }
+
+        @media (max-width: 768px) {
+            .detail-container { padding: 12px; }
+            .detail-info { grid-template-columns: 1fr 1fr; }
+            .images-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="admin-body">
+
+<div class="detail-container" ng-controller="DetailCtrl">
+
+    <!-- Header -->
+    <div class="detail-header">
+        <h1><img src="logo.png" alt="Logo"> Submission Detail</h1>
+        <div>
+            <a href="admin.html" class="btn btn-sm btn-primary" style="text-decoration:none;">Back to Admin</a>
+            <a href="reload.html" class="btn btn-sm" style="text-decoration:none;background:#fff;">Reload Panel</a>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="detail-loading" ng-show="loading">
+        <div class="spinner"></div>
+        <p>Loading submission details...</p>
+    </div>
+
+    <!-- Error -->
+    <div class="detail-card" ng-show="!loading && !record" style="text-align:center; padding:60px;">
+        <h3 style="color:#e74c3c;">Record not found</h3>
+        <p style="color:#888;">The requested submission could not be found.</p>
+        <a href="admin.html" class="btn btn-sm btn-primary" style="text-decoration:none;display:inline-block;margin-top:16px;">Back to Admin</a>
+    </div>
+
+    <!-- Detail Content -->
+    <div ng-show="!loading && record">
+
+        <!-- User & Bill Info -->
+        <div class="detail-card">
+            <div class="detail-info">
+                <div class="detail-info-item">
+                    <label>Name</label>
+                    <span>{{record.name}}</span>
+                </div>
+                <div class="detail-info-item">
+                    <label>Phone</label>
+                    <span>{{record.phone}}</span>
+                </div>
+                <div class="detail-info-item">
+                    <label>Date/Time (LKR)</label>
+                    <span>{{record.created_at | lkrTime}}</span>
+                </div>
+                <div class="detail-info-item">
+                    <label>Bill Number</label>
+                    <span>{{record.bill_number}}</span>
+                </div>
+                <div class="detail-info-item">
+                    <label>Shop</label>
+                    <span>{{record.shop_name || '-'}}</span>
+                </div>
+                <div class="detail-info-item">
+                    <label>Capture Mode</label>
+                    <span>{{record.capture_mode === 'long' ? 'Long Bill (Multi Photo)' : 'Single Photo'}}</span>
+                </div>
+            </div>
+
+            <div class="totals-bar">
+                <div class="total-box bill-total">
+                    <div class="total-label">Bill Total</div>
+                    <div class="total-value">Rs {{record.bill_total | number:2}}</div>
+                </div>
+                <div class="total-box eligible-total">
+                    <div class="total-label">Eligible Total</div>
+                    <div class="total-value">Rs {{record.eligible_total | number:2}}</div>
+                </div>
+                <div class="total-box status-box">
+                    <div class="total-label">Status</div>
+                    <div class="total-value">
+                        <span class="badge" ng-class="{'badge-success': record.is_eligible, 'badge-danger': !record.is_eligible}">
+                            {{record.is_eligible ? 'ELIGIBLE' : 'NOT ELIGIBLE'}}
+                        </span>
+                    </div>
+                </div>
+                <div class="total-box status-box" ng-show="record.is_eligible">
+                    <div class="total-label">Reload</div>
+                    <div class="total-value">
+                        <span class="badge" ng-class="{'badge-success': record.reload_sent, 'badge-warning': !record.reload_sent}">
+                            {{record.reload_sent ? 'SENT' : 'PENDING'}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <div class="detail-card">
+            <h3 style="margin-bottom:16px;">Bill Items ({{items.length}})</h3>
+            <div style="overflow-x:auto;">
+                <table class="items-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item Name</th>
+                            <th>Brand</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in items" ng-class="{'eligible-row': item.brand_matched && item.brand_matched !== 'null'}">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.item_name}}</td>
+                            <td>
+                                <span ng-if="item.brand_matched && item.brand_matched !== 'null'" class="brand-tag">{{item.brand_matched}}</span>
+                                <span ng-if="!item.brand_matched || item.brand_matched === 'null'" style="color:#999;">-</span>
+                            </td>
+                            <td>{{item.quantity}}</td>
+                            <td>Rs {{item.unit_price | number:2}}</td>
+                            <td><strong>Rs {{item.total_price | number:2}}</strong></td>
+                        </tr>
+                        <tr ng-if="items.length === 0">
+                            <td colspan="6" style="text-align:center;color:#999;padding:20px;">No items found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bill Images -->
+        <div class="detail-card">
+            <h3 style="margin-bottom:16px;">
+                Bill Images
+                <span ng-show="record.capture_mode === 'long'" style="font-size:13px;color:#888;font-weight:normal;"> - Long Bill ({{billImages.length}} photos)</span>
+                <span ng-show="record.capture_mode !== 'long'" style="font-size:13px;color:#888;font-weight:normal;"> - Single Photo</span>
+            </h3>
+
+            <div ng-show="imagesLoading" style="text-align:center;padding:30px;">
+                <div class="spinner" style="width:36px;height:36px;"></div>
+                <p style="font-size:13px;color:#999;margin-top:8px;">Loading bill images...</p>
+            </div>
+
+            <div ng-hide="imagesLoading">
+                <!-- Single mode: one large image -->
+                <div ng-show="record.capture_mode !== 'long' && billImages.length > 0">
+                    <div class="image-card single-mode">
+                        <img ng-src="{{billImages[0]}}" alt="Bill Photo">
+                    </div>
+                </div>
+
+                <!-- Long bill mode: grid of images -->
+                <div class="images-grid" ng-show="record.capture_mode === 'long' && billImages.length > 0">
+                    <div class="image-card" ng-repeat="img in billImages">
+                        <div class="image-label">{{imageLabels[$index]}}</div>
+                        <img ng-src="{{img}}" alt="Bill Photo {{$index + 1}}">
+                    </div>
+                </div>
+
+                <p ng-show="billImages.length === 0" style="color:#999;text-align:center;padding:20px;">No bill images available</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

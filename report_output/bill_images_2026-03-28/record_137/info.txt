@@ -1,0 +1,10 @@
+Name: H.G.Thushari Nilmini
+Phone: 0710149874
+Bill #: 00000017
+Shop: 
+Date (LKR): 2026-03-28 11:44:20
+Bill Total: Rs 3268.54
+Eligible Total: Rs 1604.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: வசந்தன்
+Phone: 0775057128
+Bill #: SALL/POS2026/03/400845
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-29 16:56:26
+Bill Total: Rs 7320.0
+Eligible Total: Rs 1335.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

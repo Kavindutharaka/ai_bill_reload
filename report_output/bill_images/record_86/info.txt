@@ -1,0 +1,10 @@
+Name: Sunil
+Phone: 0763766399
+Bill #: 00000209
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27T11:02:32.82
+Bill Total: Rs 7683.0
+Eligible Total: Rs 1559.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

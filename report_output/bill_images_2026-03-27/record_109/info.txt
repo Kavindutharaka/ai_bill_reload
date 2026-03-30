@@ -1,0 +1,10 @@
+Name: Chandana
+Phone: 0763464505
+Bill #: 121901
+Shop: R.P. FOOD CITY
+Date (LKR): 2026-03-27 18:19:07
+Bill Total: Rs 0.0
+Eligible Total: Rs 1045.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: long

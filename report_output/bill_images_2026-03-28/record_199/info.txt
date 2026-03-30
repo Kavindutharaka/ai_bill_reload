@@ -1,0 +1,10 @@
+Name: Chinthana
+Phone: 0761706068
+Bill #: 4064766
+Shop: SuperValu
+Date (LKR): 2026-03-28T12:17:17.57
+Bill Total: Rs 1275.0
+Eligible Total: Rs 1275.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

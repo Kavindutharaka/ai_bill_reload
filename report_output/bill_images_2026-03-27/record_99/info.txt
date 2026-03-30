@@ -1,0 +1,10 @@
+Name: Shashika
+Phone: 0704869517
+Bill #: 26132.12
+Shop: 
+Date (LKR): 2026-03-27T12:06:34.95
+Bill Total: Rs 0.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

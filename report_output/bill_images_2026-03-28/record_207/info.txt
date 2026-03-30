@@ -1,0 +1,10 @@
+Name: Vidhya Milano prasad
+Phone: 0772891404
+Bill #: 766849
+Shop: TCT Multi Trade Centre
+Date (LKR): 2026-03-28 19:33:41
+Bill Total: Rs 0.0
+Eligible Total: Rs 2180.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

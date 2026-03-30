@@ -1,0 +1,10 @@
+Name: Abeesheth
+Phone: 0711325626
+Bill #: SALE/POS2026/03/400531
+Shop: ONE MAX CITY PVT LID
+Date (LKR): 2026-03-28 20:11:19
+Bill Total: Rs 11683.0
+Eligible Total: Rs 2870.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

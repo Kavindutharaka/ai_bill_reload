@@ -1,0 +1,10 @@
+Name: Heshani Lakshika
+Phone: 0764906071
+Bill #: 00000106
+Shop: චන්දිමාල් ෆුඩ් සිටි
+Date (LKR): 2026-03-29 17:28:55
+Bill Total: Rs 129.0
+Eligible Total: Rs 129.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Dilan Sandeep
+Phone: 0715238512
+Bill #: 212007
+Shop: සුජිත් ස්ටෝර්ස්
+Date (LKR): 2026-03-28 12:37:32
+Bill Total: Rs 4392.85
+Eligible Total: Rs 1290.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

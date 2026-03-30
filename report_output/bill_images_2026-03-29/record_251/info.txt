@@ -1,0 +1,10 @@
+Name: Niruparan
+Phone: 0778061724
+Bill #: SALE/POS2026/03/400750
+Shop: ONE MAX CITY PVT LTD
+Date (LKR): 2026-03-29 13:10:49
+Bill Total: Rs 2525.0
+Eligible Total: Rs 1960.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

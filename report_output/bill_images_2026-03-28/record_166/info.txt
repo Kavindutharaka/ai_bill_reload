@@ -1,0 +1,10 @@
+Name: Jesi
+Phone: 0741366121
+Bill #: 001#5807
+Shop: RICHMAART SUPERS
+Date (LKR): 2026-03-28 14:03:10
+Bill Total: Rs 1660.0
+Eligible Total: Rs 0.0
+Status: NOT ELIGIBLE
+Reload: N/A
+Capture Mode: single

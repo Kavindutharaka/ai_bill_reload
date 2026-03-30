@@ -1,0 +1,10 @@
+Name: Sanuka
+Phone: 0772681561
+Bill #: 0700000159
+Shop: U Mart
+Date (LKR): 2026-03-28 15:33:53
+Bill Total: Rs 7088.3
+Eligible Total: Rs 1140.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

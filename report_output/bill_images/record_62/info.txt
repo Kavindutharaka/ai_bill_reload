@@ -1,0 +1,10 @@
+Name: Sumith
+Phone: 0767593493
+Bill #: INV01032592
+Shop: NEW UDAYAGIRI STORES
+Date (LKR): 2026-03-27 14:51:37
+Bill Total: Rs 100380.0
+Eligible Total: Rs 73920.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

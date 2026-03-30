@@ -1,0 +1,10 @@
+Name: Wm.Waragoda
+Phone: 0788203630
+Bill #: 00000020
+Shop: Karunarathna Stores
+Date (LKR): 2026-03-27T09:50:40.14
+Bill Total: Rs 1100.0
+Eligible Total: Rs 1100.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

@@ -1,0 +1,10 @@
+Name: Thilini Thoradeniya
+Phone: 0779661915
+Bill #: 1364564
+Shop: coop
+Date (LKR): 2026-03-28T17:03:28.49
+Bill Total: Rs 5955.0
+Eligible Total: Rs 1425.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

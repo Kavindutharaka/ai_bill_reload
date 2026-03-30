@@ -1,0 +1,10 @@
+Name: Nilua
+Phone: 0705518399
+Bill #: IN-5-131381
+Shop: HHP SUPER
+Date (LKR): 2026-03-27T10:42:22.25
+Bill Total: Rs 1160.0
+Eligible Total: Rs 1160.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

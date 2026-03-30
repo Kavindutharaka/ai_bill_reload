@@ -1,0 +1,10 @@
+Name: Thubikka
+Phone: 0703578662
+Bill #: 2387516
+Shop: SIVASAKTH
+Date (LKR): 2026-03-29T10:56:54.73
+Bill Total: Rs 3660.0
+Eligible Total: Rs 1260.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

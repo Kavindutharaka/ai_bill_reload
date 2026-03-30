@@ -1,0 +1,10 @@
+Name: Gayani
+Phone: 0752307224
+Bill #: 3566549
+Shop: collection
+Date (LKR): 2026-03-26 15:52:40
+Bill Total: Rs 1640.0
+Eligible Total: Rs 1640.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: None

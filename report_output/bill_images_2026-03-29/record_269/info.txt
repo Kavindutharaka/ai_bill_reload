@@ -1,0 +1,10 @@
+Name: Dilani
+Phone: 0772787710
+Bill #: 214011137413
+Shop: 
+Date (LKR): 2026-03-29T09:22:19.27
+Bill Total: Rs 10590.0
+Eligible Total: Rs 1555.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single

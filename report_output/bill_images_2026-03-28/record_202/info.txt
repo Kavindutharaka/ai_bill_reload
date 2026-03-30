@@ -1,0 +1,10 @@
+Name: V.k.sumith
+Phone: 0771670474
+Bill #: 00000088
+Shop: Piyasinghe Super Stores
+Date (LKR): 2026-03-28T13:29:12.84
+Bill Total: Rs 4635.0
+Eligible Total: Rs 1015.0
+Status: ELIGIBLE
+Reload: SENT
+Capture Mode: single
