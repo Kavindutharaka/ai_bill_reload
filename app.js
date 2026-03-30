@@ -425,6 +425,19 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
 
     $scope.selectLanguage = function(lang) {
         $scope.t = LANG[lang] || LANG.en;
+        // Check localStorage for previous submission
+        try {
+            if (localStorage.getItem('rek_submitted')) {
+                $scope.result = {
+                    type: 'error',
+                    title: $scope.t.titleAlreadySubmitted,
+                    message: $scope.t.msgAlreadySubmitted,
+                    icon: '🚫'
+                };
+                $scope.step = 4;
+                return;
+            }
+        } catch(e) {}
         $scope.step = 1;
     };
     $scope.user = { name: '', phone: '' };
@@ -641,6 +654,34 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
         $scope.step = 3;
         $scope.currentAttempt = 0;
 
+        // Check if phone number already submitted
+        var phone = ($scope.phone || '').trim();
+        var checkPhoneSql = "SELECT COUNT(*) as cnt FROM rek_cc_reg WHERE phone = '" + phone.replace(/'/g, "''") + "'";
+        ApiService.query(checkPhoneSql).then(function(resp) {
+            var count = 0;
+            if (resp.data && resp.data.length > 0) {
+                count = resp.data[0].cnt || 0;
+            }
+            if (count > 0) {
+                $scope.result = {
+                    type: 'error',
+                    title: $scope.t.titleAlreadySubmitted,
+                    message: $scope.t.msgAlreadySubmitted,
+                    icon: '🚫'
+                };
+                $scope.step = 4;
+                $scope.isSubmitting = false;
+                return;
+            }
+            // Phone is new, proceed with Gemini
+            analyzeBillWithGemini(images);
+        }).catch(function() {
+            // If check fails, proceed anyway
+            analyzeBillWithGemini(images);
+        });
+    };
+
+    function analyzeBillWithGemini(images) {
         GeminiService.analyzeBill(images, function(attempt) {
             $scope.currentAttempt = attempt;
         }).then(function(data) {
@@ -824,6 +865,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
             };
             $scope.step = 4;
             $scope.isSubmitting = false;
+            try { localStorage.setItem('rek_submitted', '1'); } catch(e) {}
             $timeout(function() { ConfettiService.launch(); }, 300);
 
             // Notify admin via email (fire and forget)
@@ -847,6 +889,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout', '$interval', 'ApiServ
             };
             $scope.step = 4;
             $scope.isSubmitting = false;
+            try { localStorage.setItem('rek_submitted', '1'); } catch(e) {}
         }
     }
 

@@ -57,7 +57,12 @@
       "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"SELECT id, name, phone, bill_number, is_eligible, reload_sent FROM rek_cc_reg WHERE phone = ''0764099051''\"\"}\")",
       "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"UPDATE rek_cc_reg SET is_eligible = 1, reload_sent = 1 WHERE id = 220\"\"}\")",
       "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"SELECT COUNT\\(*\\) as cnt FROM rek_cc_reg WHERE DATEADD\\(MINUTE, 330, created_at\\) >= ''2026-03-29 00:00:00'' AND DATEADD\\(MINUTE, 330, created_at\\) < ''2026-03-30 00:00:00''\"\"}\")",
-      "Bash(python generate_report_29.py)"
+      "Bash(python generate_report_29.py)",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"IF NOT EXISTS \\(SELECT * FROM sys.indexes WHERE name = ''UQ_rek_cc_reg_phone'' AND object_id = OBJECT_ID\\(''rek_cc_reg''\\)\\) ALTER TABLE rek_cc_reg ADD CONSTRAINT UQ_rek_cc_reg_phone UNIQUE \\(phone\\)\"\"}\")",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"SELECT phone, COUNT\\(*\\) as cnt FROM rek_cc_reg GROUP BY phone HAVING COUNT\\(*\\) > 1\"\"}\")",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"SELECT name FROM sys.indexes WHERE object_id = OBJECT_ID\\(''rek_cc_reg''\\) AND name LIKE ''%phone%''\"\"}\")",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"CREATE OR ALTER TRIGGER trg_rek_cc_reg_no_dup_phone ON rek_cc_reg INSTEAD OF INSERT AS BEGIN INSERT INTO rek_cc_reg \\(name, phone, bill_image, bill_number, bill_date, shop_name, bill_total, eligible_total, is_eligible, items_json, capture_mode, created_at\\) SELECT i.name, i.phone, i.bill_image, i.bill_number, i.bill_date, i.shop_name, i.bill_total, i.eligible_total, i.is_eligible, i.items_json, i.capture_mode, i.created_at FROM inserted i WHERE NOT EXISTS \\(SELECT 1 FROM rek_cc_reg r WHERE r.phone = i.phone\\) END\"\"}\")",
+      "Bash(curl -s -X POST \"https://mas.phvtech.com/api/Master/sp\" -H \"Content-Type: application/json\" -d \"{\"\"SysID\"\": \"\"DROP TRIGGER IF EXISTS trg_rek_cc_reg_no_dup_phone\"\"}\")"
     ]
   }
 }
